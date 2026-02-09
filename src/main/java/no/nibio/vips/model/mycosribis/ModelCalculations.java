@@ -72,22 +72,30 @@ public class ModelCalculations {
         if (qualifyingObservations.size() < 15) {
             throw new IllegalArgumentException("List of hourly LW observations must contain at least 15 valid items.");
         }
-        // List must contain values that are no longer than 24 hours apart
+        // List must contain values that are no longer than 25 hours apart (DST day)
         Collections.sort(qualifyingObservations);
         long timeDifference = qualifyingObservations.get(qualifyingObservations.size() - 1).getTimeMeasured().getTime() - qualifyingObservations.get(0).getTimeMeasured().getTime();
-        if (timeDifference > 24 * 60 * 60 * 1000) {
-            throw new IllegalArgumentException("List of hourly LW observations must contain values that are no longer than 24 hours apart.");
+        if (timeDifference > 25L * 60 * 60 * 1000) {
+            throw new IllegalArgumentException("List of hourly LW observations must contain values that are no longer than 25 hours apart (DST accounted).");
         }
         return qualifyingObservations.stream().filter(val-> val.getValue() == 60.0).count();
     }
 
-    public void calculateConsecutiveDryDays(DateMap dataMatrix) {
-        // This method would calculate consecutive dry days based on the provided daily precipitation and leaf wetness data.
-        // Implementation would depend on how the data is structured and how you want to define "consecutive".
+    /**
+     * calculate consecutive dry days based on daily precipitation and leaf wetness data in the Data Matrix
+     * Stores the number of consecutive dry days in the data matrix
+     * @param dataMatrix
+     */
+    public void calculateConsecutiveDryDays(DateMap dataMatrix, TimeZone timeZone) {
         Date startDate = dataMatrix.getFirstDateWithValues();
         Date endDate = dataMatrix.getLastDateWithValues();
         int consecutiveDryDays = 0;
         
+        Date currentDate = startDate;
+        while(currentDate.compareTo(endDate) <= 0)
+        {
+            if(this.isDryDay(null, dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.LEAF_WETNESS_DURATION))null)
+        }
     }
 
     public DateMap initDataMatrix(List<WeatherObservation> allObservations) {
