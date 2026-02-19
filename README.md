@@ -1,8 +1,9 @@
 <img src="vipslogo_512.png" alt="VIPS Logo" height="250"/>
 
 # Mycosphaerella ribis in Blackcurrant
+**&copy; 2026 NIBIO**
 
-Arne Stensvand, Håvard Eikemo, Anne-Grete Roer Hjelkrem
+**Arne Stensvand, Håvard Eikemo, Anne-Grete Roer Hjelkrem**
 
 Disease symptoms, sources of inoculum, and patterns of spore release of Mycosphaerella ribis, the 
 cause of Mycosphaerella leaf spot, were studied over three years in an organic blackcurrant planting 

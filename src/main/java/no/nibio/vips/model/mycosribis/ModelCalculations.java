@@ -20,6 +20,7 @@
 package no.nibio.vips.model.mycosribis;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -29,6 +30,7 @@ import java.util.stream.Collectors;
 
 import no.nibio.vips.entity.WeatherObservation;
 import no.nibio.vips.model.ConfigValidationException;
+import no.nibio.vips.model.ModelId;
 import no.nibio.vips.util.DateMap;
 import no.nibio.vips.util.InvalidAggregationTypeException;
 import no.nibio.vips.util.WeatherElements;
@@ -49,7 +51,7 @@ public class ModelCalculations {
      * @return
      */
     public boolean isDryDay(Double precipitation, Long leafWetnessDuration) {
-        return precipitation < 0.2 || leafWetnessDuration < 12;
+        return precipitation < 0.2 && leafWetnessDuration < 12;
     }
 
     /**
@@ -84,23 +86,76 @@ public class ModelCalculations {
     /**
      * calculate consecutive dry days based on daily precipitation and leaf wetness data in the Data Matrix
      * Stores the number of consecutive dry days in the data matrix
+     * Calculates the spore maturation for conidia and ascospores, stores results in the data matrix
      * @param dataMatrix
      */
-    public void calculateConsecutiveDryDays(DateMap dataMatrix, TimeZone timeZone) {
+    public void calculateSporeMaturation(DateMap dataMatrix, TimeZone timeZone, ModelId modelId) {
         Date startDate = dataMatrix.getFirstDateWithValues();
         Date endDate = dataMatrix.getLastDateWithValues();
+        Integer thresholdConsecuticeDryDaysAscospores = 7;
+        Integer thresholdConsecuticeDryDaysConidia = 4;
         int consecutiveDryDays = 0;
+        Double DDSumAscospores = 0.0;
+        Double DDSumConidia = 0.0;
+        Double proportionMatureAscospores = 0.0;
+        Double proportionMatureConidia = 0.0;
         
         Date currentDate = startDate;
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.setTime(currentDate);
         while(currentDate.compareTo(endDate) <= 0)
         {
-            if(this.isDryDay(null, dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.LEAF_WETNESS_DURATION))null)
+            if(this.isDryDay(dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION), dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS).longValue()))
+            {
+                consecutiveDryDays++;
+            }
+            else
+            {
+                consecutiveDryDays = 0;
+            }
+            dataMatrix.setParamIntValueForDate(currentDate, modelId.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS, consecutiveDryDays);
+
+            DDSumAscospores += consecutiveDryDays < thresholdConsecuticeDryDaysAscospores ? (dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)) : 0.0;
+            DDSumConidia += consecutiveDryDays < thresholdConsecuticeDryDaysConidia ? (dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)) : 0.0;
+
+            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.DD_SUM_ASCOSPORES, DDSumAscospores);
+            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.DD_SUM_CONIDIA, DDSumConidia);
+
+            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES, this.getProportionMatureAscospores(DDSumAscospores));
+            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA, this.getProportionMatureConidia(DDSumConidia));
+
+            cal.add(Calendar.DATE, 1);
+            currentDate = cal.getTime();
         }
     }
 
+
+    /**
+     * B   = [9.235    0.012];
+     * r_d = exp(-B(1)*exp(-B(2)*DD));
+     * @param DDSumAscospores
+     * @return
+     */
+    public Double getProportionMatureAscospores(Double DDSumAscospores) {
+        return Math.exp(-9.235 * Math.exp(-0.012 * DDSumAscospores));
+    }
+
+    /**
+     * B   = [2.1736    0.0130];
+     * r_d = exp(-B(1)*exp(-B(2)*DD));
+     * @param DDSumConidia
+     * @return
+     */
+    public Double getProportionMatureConidia(Double DDSumConidia) {
+        return Math.exp(-2.1736 * Math.exp(-0.013 * DDSumConidia));
+    }
+
+    /**
+     * Initialize the data matrix, set the weather data
+     * @param allObservations
+     * @return
+     */
     public DateMap initDataMatrix(List<WeatherObservation> allObservations) {
-        // This method would initialize the data matrix with the necessary calculations for the model.
-        // It would likely involve iterating through the daily precipitation and hourly LW observations, calculating daily LW, and determining dry days.
         DateMap dataMatrix = new DateMap();
         for(WeatherObservation obs : allObservations) {
             dataMatrix.setParamDoubleValueForDate(obs.getTimeMeasured(), obs.getElementMeasurementTypeId(), obs.getValue());
@@ -133,7 +188,7 @@ public class ModelCalculations {
         if(TM.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1H))
         {
             try {
-                TM = weatherUtil.getAggregatedDailyValues(observations, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_AVERAGE);
+                TM = weatherUtil.getAggregatedDailyValues(TM, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_AVERAGE);
             } catch (WeatherObservationListException | InvalidAggregationTypeException e) {
                 throw new ConfigValidationException(e.getMessage());
             }
@@ -154,7 +209,7 @@ public class ModelCalculations {
         if(RR.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1H))
         {
             try {
-                RR = weatherUtil.getAggregatedDailyValues(observations, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_SUM);
+                RR = weatherUtil.getAggregatedDailyValues(RR, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_SUM);
             } catch (WeatherObservationListException | InvalidAggregationTypeException e) {
                 throw new ConfigValidationException(e.getMessage());
             }
@@ -183,7 +238,7 @@ public class ModelCalculations {
                 WeatherObservation dailyLWObservation = new WeatherObservation();
                 dailyLWObservation.setTimeMeasured(day);
                 dailyLWObservation.setLogIntervalId(WeatherObservation.LOG_INTERVAL_ID_1D);
-                dailyLWObservation.setElementMeasurementTypeId(WeatherElements.LEAF_WETNESS_DURATION);
+                dailyLWObservation.setElementMeasurementTypeId(MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS);
                 dailyLWObservation.setValue(dailyLWHours.doubleValue());
                 BT.add(dailyLWObservation);
             }

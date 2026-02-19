@@ -1,0 +1,5762 @@
+[
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T22:00:00Z",
+        "value": 13.392
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T22:00:00Z",
+        "value": 70.78
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T23:00:00Z",
+        "value": 12.176
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T23:00:00Z",
+        "value": 74.385
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-04-30T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T00:00:00Z",
+        "value": 10.759
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T00:00:00Z",
+        "value": 80.103
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T01:00:00Z",
+        "value": 10.736
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T01:00:00Z",
+        "value": 81.017
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T02:00:00Z",
+        "value": 9.948
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T02:00:00Z",
+        "value": 84.511
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T03:00:00Z",
+        "value": 10.069
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T03:00:00Z",
+        "value": 80.061
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T04:00:00Z",
+        "value": 9.898
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T04:00:00Z",
+        "value": 79.961
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T05:00:00Z",
+        "value": 10.593
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T05:00:00Z",
+        "value": 74.289
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T06:00:00Z",
+        "value": 11.169
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T06:00:00Z",
+        "value": 71.828
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T07:00:00Z",
+        "value": 11.807
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T07:00:00Z",
+        "value": 67.914
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T08:00:00Z",
+        "value": 13.054
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T08:00:00Z",
+        "value": 64.194
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T09:00:00Z",
+        "value": 13.717
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T09:00:00Z",
+        "value": 61.697
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T10:00:00Z",
+        "value": 14.034
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T10:00:00Z",
+        "value": 60.248
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T11:00:00Z",
+        "value": 13.178
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T11:00:00Z",
+        "value": 63.08
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T12:00:00Z",
+        "value": 14.484
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T12:00:00Z",
+        "value": 58.449
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T13:00:00Z",
+        "value": 13.529
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T13:00:00Z",
+        "value": 61.218
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T14:00:00Z",
+        "value": 12.076
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T14:00:00Z",
+        "value": 65.771
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T15:00:00Z",
+        "value": 11.563
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T15:00:00Z",
+        "value": 66.786
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T16:00:00Z",
+        "value": 11.276
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T16:00:00Z",
+        "value": 66.054
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T17:00:00Z",
+        "value": 10.691
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T17:00:00Z",
+        "value": 68.384
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T18:00:00Z",
+        "value": 10.361
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T18:00:00Z",
+        "value": 67.221
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T19:00:00Z",
+        "value": 9.88
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T19:00:00Z",
+        "value": 0.417
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T19:00:00Z",
+        "value": 66.122
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T20:00:00Z",
+        "value": 9.4
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T20:00:00Z",
+        "value": 63.447
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T21:00:00Z",
+        "value": 8.567
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T21:00:00Z",
+        "value": 41.391
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T21:00:00Z",
+        "value": 66.707
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T22:00:00Z",
+        "value": 7.865
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T22:00:00Z",
+        "value": 51.848
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T22:00:00Z",
+        "value": 73.404
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T22:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T23:00:00Z",
+        "value": 7.709
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T23:00:00Z",
+        "value": 43.114
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T23:00:00Z",
+        "value": 75.299
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-01T23:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T00:00:00Z",
+        "value": 7.688
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T00:00:00Z",
+        "value": 9.662
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T00:00:00Z",
+        "value": 71.683
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T01:00:00Z",
+        "value": 7.227
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T01:00:00Z",
+        "value": 11.393
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T01:00:00Z",
+        "value": 65.438
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T02:00:00Z",
+        "value": 6.809
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T02:00:00Z",
+        "value": 61.784
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T03:00:00Z",
+        "value": 6.383
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T03:00:00Z",
+        "value": 54.569
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T04:00:00Z",
+        "value": 5.931
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T04:00:00Z",
+        "value": 53.377
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T05:00:00Z",
+        "value": 6.084
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T05:00:00Z",
+        "value": 49.633
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T06:00:00Z",
+        "value": 6.691
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T06:00:00Z",
+        "value": 48.381
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T07:00:00Z",
+        "value": 9.064
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T07:00:00Z",
+        "value": 44.537
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T08:00:00Z",
+        "value": 10.302
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T08:00:00Z",
+        "value": 38.599
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T09:00:00Z",
+        "value": 10.368
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T09:00:00Z",
+        "value": 38.054
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T10:00:00Z",
+        "value": 9.721
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T10:00:00Z",
+        "value": 35.506
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T11:00:00Z",
+        "value": 10.94
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T11:00:00Z",
+        "value": 32.11
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T12:00:00Z",
+        "value": 11.231
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T12:00:00Z",
+        "value": 30.854
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T13:00:00Z",
+        "value": 11.445
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T13:00:00Z",
+        "value": 30.903
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T14:00:00Z",
+        "value": 10.595
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T14:00:00Z",
+        "value": 32.507
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T15:00:00Z",
+        "value": 10.53
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T15:00:00Z",
+        "value": 32.387
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T16:00:00Z",
+        "value": 9.583
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T16:00:00Z",
+        "value": 32.083
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T17:00:00Z",
+        "value": 8.354
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T17:00:00Z",
+        "value": 34.23
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T18:00:00Z",
+        "value": 6.291
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T18:00:00Z",
+        "value": 39.25
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T19:00:00Z",
+        "value": 5.187
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T19:00:00Z",
+        "value": 43.35
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T20:00:00Z",
+        "value": 4.419
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T20:00:00Z",
+        "value": 48.305
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T21:00:00Z",
+        "value": 3.658
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T21:00:00Z",
+        "value": 51.213
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T22:00:00Z",
+        "value": 3.353
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T22:00:00Z",
+        "value": 51.566
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T23:00:00Z",
+        "value": 2.933
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T23:00:00Z",
+        "value": 56.378
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-02T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T00:00:00Z",
+        "value": 3.094
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T00:00:00Z",
+        "value": 56.374
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T01:00:00Z",
+        "value": 56.566
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T01:00:00Z",
+        "value": null
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T02:00:00Z",
+        "value": 2.764
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T02:00:00Z",
+        "value": 56.764
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T03:00:00Z",
+        "value": 2.582
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T03:00:00Z",
+        "value": 60.437
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T04:00:00Z",
+        "value": 2.855
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T04:00:00Z",
+        "value": 56.908
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T05:00:00Z",
+        "value": 3.077
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T05:00:00Z",
+        "value": 57.513
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T06:00:00Z",
+        "value": 3.899
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T06:00:00Z",
+        "value": 58.215
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T07:00:00Z",
+        "value": 4.455
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T07:00:00Z",
+        "value": 57.811
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T08:00:00Z",
+        "value": 4.377
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T08:00:00Z",
+        "value": 55.895
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T09:00:00Z",
+        "value": 4.656
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T09:00:00Z",
+        "value": 52.494
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T10:00:00Z",
+        "value": 7.053
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T10:00:00Z",
+        "value": 48.235
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T11:00:00Z",
+        "value": 7.518
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T11:00:00Z",
+        "value": 44.647
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T12:00:00Z",
+        "value": 8.432
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T12:00:00Z",
+        "value": 6.729
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T12:00:00Z",
+        "value": 40.739
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T13:00:00Z",
+        "value": 9.013
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T13:00:00Z",
+        "value": 35.029
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T14:00:00Z",
+        "value": 7.591
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T14:00:00Z",
+        "value": 2.777
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T14:00:00Z",
+        "value": 39.046
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T15:00:00Z",
+        "value": 9.522
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T15:00:00Z",
+        "value": 32.562
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T16:00:00Z",
+        "value": 6.872
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T16:00:00Z",
+        "value": 7.638
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T16:00:00Z",
+        "value": 42.423
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T17:00:00Z",
+        "value": 5.775
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T17:00:00Z",
+        "value": 44.366
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T18:00:00Z",
+        "value": 4.844
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T18:00:00Z",
+        "value": 35.076
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T19:00:00Z",
+        "value": 3.31
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T19:00:00Z",
+        "value": 35.493
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T20:00:00Z",
+        "value": 1.83
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T20:00:00Z",
+        "value": 44.201
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T21:00:00Z",
+        "value": 1.19
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T21:00:00Z",
+        "value": 44.147
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T22:00:00Z",
+        "value": 1.268
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T22:00:00Z",
+        "value": 45.272
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T23:00:00Z",
+        "value": -0.391
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T23:00:00Z",
+        "value": 53.361
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-03T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T00:00:00Z",
+        "value": -0.647
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T00:00:00Z",
+        "value": 55.251
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T01:00:00Z",
+        "value": -0.649
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T01:00:00Z",
+        "value": 55.463
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T02:00:00Z",
+        "value": -1.066
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T02:00:00Z",
+        "value": 56.728
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T03:00:00Z",
+        "value": -0.907
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T03:00:00Z",
+        "value": 59.403
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T04:00:00Z",
+        "value": 0.07
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T04:00:00Z",
+        "value": 60.165
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T05:00:00Z",
+        "value": 1.696
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T05:00:00Z",
+        "value": 58.372
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T06:00:00Z",
+        "value": 3.446
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T06:00:00Z",
+        "value": 52.887
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T07:00:00Z",
+        "value": 4.829
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T07:00:00Z",
+        "value": 45.951
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T08:00:00Z",
+        "value": 5.826
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T08:00:00Z",
+        "value": 45.854
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T09:00:00Z",
+        "value": 6.379
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T09:00:00Z",
+        "value": 45.192
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T10:00:00Z",
+        "value": 7.615
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T10:00:00Z",
+        "value": 7.19
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T10:00:00Z",
+        "value": 46.311
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T11:00:00Z",
+        "value": 8.915
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T11:00:00Z",
+        "value": 45.731
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T12:00:00Z",
+        "value": 9.882
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T12:00:00Z",
+        "value": 39.526
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T13:00:00Z",
+        "value": 10.381
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T13:00:00Z",
+        "value": 35.147
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T14:00:00Z",
+        "value": 9.757
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T14:00:00Z",
+        "value": 35.045
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T15:00:00Z",
+        "value": 10.96
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T15:00:00Z",
+        "value": 32.851
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T16:00:00Z",
+        "value": 10.282
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T16:00:00Z",
+        "value": 34.458
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T17:00:00Z",
+        "value": 8.652
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T17:00:00Z",
+        "value": 38.385
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T18:00:00Z",
+        "value": 7.237
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T18:00:00Z",
+        "value": 9.521
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T18:00:00Z",
+        "value": 44.509
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T19:00:00Z",
+        "value": 6.592
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T19:00:00Z",
+        "value": 46.313
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T20:00:00Z",
+        "value": 5.954
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T20:00:00Z",
+        "value": 0.131
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T20:00:00Z",
+        "value": 46.9
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T21:00:00Z",
+        "value": 5.122
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T21:00:00Z",
+        "value": 50.063
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T22:00:00Z",
+        "value": 5.433
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T22:00:00Z",
+        "value": 49.025
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T23:00:00Z",
+        "value": 4.958
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T23:00:00Z",
+        "value": 48.715
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-04T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T00:00:00Z",
+        "value": 4.726
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T00:00:00Z",
+        "value": 48.586
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T01:00:00Z",
+        "value": 4.365
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T01:00:00Z",
+        "value": 50.249
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T02:00:00Z",
+        "value": 4.243
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T02:00:00Z",
+        "value": 53.366
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T03:00:00Z",
+        "value": 3.93
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T03:00:00Z",
+        "value": 56.647
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T04:00:00Z",
+        "value": 4.163
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T04:00:00Z",
+        "value": 7.269
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T04:00:00Z",
+        "value": 59.648
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T05:00:00Z",
+        "value": 4.27
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T05:00:00Z",
+        "value": 28.373
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T05:00:00Z",
+        "value": 63.421
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T06:00:00Z",
+        "value": 3.908
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T06:00:00Z",
+        "value": 55.254
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T06:00:00Z",
+        "value": 70.681
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T07:00:00Z",
+        "value": 3.579
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T07:00:00Z",
+        "value": 53.697
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T07:00:00Z",
+        "value": 76.025
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T08:00:00Z",
+        "value": 3.991
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T08:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T08:00:00Z",
+        "value": 78.56
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T08:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T09:00:00Z",
+        "value": 4.525
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T09:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T09:00:00Z",
+        "value": 79.17
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T09:00:00Z",
+        "value": 0.2
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T10:00:00Z",
+        "value": 4.988
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T10:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T10:00:00Z",
+        "value": 79.87
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T10:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T11:00:00Z",
+        "value": 5.439
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T11:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T11:00:00Z",
+        "value": 81.495
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T11:00:00Z",
+        "value": 0.5
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T12:00:00Z",
+        "value": 6.208
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T12:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T12:00:00Z",
+        "value": 78.692
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T12:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T13:00:00Z",
+        "value": 6.802
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T13:00:00Z",
+        "value": 37.681
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T13:00:00Z",
+        "value": 73.014
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T14:00:00Z",
+        "value": 6.845
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T14:00:00Z",
+        "value": 38.995
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T14:00:00Z",
+        "value": 71.515
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T15:00:00Z",
+        "value": 6.184
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T15:00:00Z",
+        "value": 42.033
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T15:00:00Z",
+        "value": 70.215
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T16:00:00Z",
+        "value": 6.225
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T16:00:00Z",
+        "value": 45.396
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T16:00:00Z",
+        "value": 69.471
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T16:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T17:00:00Z",
+        "value": 5.643
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T17:00:00Z",
+        "value": 1.4
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T17:00:00Z",
+        "value": 67.75
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T18:00:00Z",
+        "value": 4.489
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T18:00:00Z",
+        "value": 36.871
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T18:00:00Z",
+        "value": 75.391
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T18:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T19:00:00Z",
+        "value": 2.845
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T19:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T19:00:00Z",
+        "value": 85.187
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T20:00:00Z",
+        "value": 2.244
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T20:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T20:00:00Z",
+        "value": 90.342
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T21:00:00Z",
+        "value": 2.086
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T21:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T21:00:00Z",
+        "value": 87.089
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T22:00:00Z",
+        "value": 1.443
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T22:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T22:00:00Z",
+        "value": 89.712
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T23:00:00Z",
+        "value": 1.258
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T23:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T23:00:00Z",
+        "value": 90.555
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-05T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T00:00:00Z",
+        "value": 1.118
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T00:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T00:00:00Z",
+        "value": 91.006
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T01:00:00Z",
+        "value": 1.388
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T01:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T01:00:00Z",
+        "value": 90.807
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T02:00:00Z",
+        "value": 1.09
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T02:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T02:00:00Z",
+        "value": 91.541
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T03:00:00Z",
+        "value": 0.677
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T03:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T03:00:00Z",
+        "value": 91.728
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T04:00:00Z",
+        "value": 1.166
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T04:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T04:00:00Z",
+        "value": 90.4
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T05:00:00Z",
+        "value": 2.807
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T05:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T05:00:00Z",
+        "value": 86.546
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T06:00:00Z",
+        "value": 4.438
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T06:00:00Z",
+        "value": 28.408
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T06:00:00Z",
+        "value": 76.873
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T07:00:00Z",
+        "value": 6.011
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T07:00:00Z",
+        "value": 56.566
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T08:00:00Z",
+        "value": 8.648
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T08:00:00Z",
+        "value": 36.956
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T09:00:00Z",
+        "value": 9.038
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T09:00:00Z",
+        "value": 33.225
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T10:00:00Z",
+        "value": 9.725
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T10:00:00Z",
+        "value": 28.729
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T11:00:00Z",
+        "value": 10.084
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T11:00:00Z",
+        "value": 28.075
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T12:00:00Z",
+        "value": 9.222
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T12:00:00Z",
+        "value": 27.579
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T13:00:00Z",
+        "value": 8.566
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T13:00:00Z",
+        "value": 28.906
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T14:00:00Z",
+        "value": 8.874
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T14:00:00Z",
+        "value": 28.647
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T15:00:00Z",
+        "value": 7.674
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T15:00:00Z",
+        "value": 32.951
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T16:00:00Z",
+        "value": 7.933
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T16:00:00Z",
+        "value": 36.946
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T17:00:00Z",
+        "value": 6.532
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T17:00:00Z",
+        "value": 44.08
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T18:00:00Z",
+        "value": 5.445
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T18:00:00Z",
+        "value": 47.25
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T19:00:00Z",
+        "value": 3.721
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T19:00:00Z",
+        "value": 52.373
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T20:00:00Z",
+        "value": 3.003
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T20:00:00Z",
+        "value": 59.578
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T21:00:00Z",
+        "value": 1.957
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T21:00:00Z",
+        "value": 64.265
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T22:00:00Z",
+        "value": 0.59
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T22:00:00Z",
+        "value": 68.087
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T23:00:00Z",
+        "value": 0.222
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T23:00:00Z",
+        "value": 64.05
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-06T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T00:00:00Z",
+        "value": 0.334
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T00:00:00Z",
+        "value": 63.097
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T01:00:00Z",
+        "value": -0.079
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T01:00:00Z",
+        "value": 62.308
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T02:00:00Z",
+        "value": -0.631
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T02:00:00Z",
+        "value": 64.862
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T03:00:00Z",
+        "value": -0.444
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T03:00:00Z",
+        "value": 65.559
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T04:00:00Z",
+        "value": -0.077
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T04:00:00Z",
+        "value": 64.862
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T05:00:00Z",
+        "value": 2.276
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T05:00:00Z",
+        "value": 58.203
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T06:00:00Z",
+        "value": 5.546
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T06:00:00Z",
+        "value": 46.193
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T07:00:00Z",
+        "value": 7.518
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T07:00:00Z",
+        "value": 36.988
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T08:00:00Z",
+        "value": 7.864
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T08:00:00Z",
+        "value": 35.619
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T09:00:00Z",
+        "value": 7.931
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T09:00:00Z",
+        "value": 37.031
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T10:00:00Z",
+        "value": 7.741
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T10:00:00Z",
+        "value": 37.593
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T11:00:00Z",
+        "value": 8.12
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T11:00:00Z",
+        "value": 36.601
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T12:00:00Z",
+        "value": 8.854
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T12:00:00Z",
+        "value": 35.408
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T13:00:00Z",
+        "value": 9.011
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T13:00:00Z",
+        "value": 33.083
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T14:00:00Z",
+        "value": 9.546
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T14:00:00Z",
+        "value": 38.279
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T15:00:00Z",
+        "value": 6.698
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T15:00:00Z",
+        "value": 6.506
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T15:00:00Z",
+        "value": 56.387
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T16:00:00Z",
+        "value": 4.754
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T16:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T16:00:00Z",
+        "value": 73.801
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T16:00:00Z",
+        "value": 0.6
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T17:00:00Z",
+        "value": null
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T17:00:00Z",
+        "value": null
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T17:00:00Z",
+        "value": null
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T17:00:00Z",
+        "value": null
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T18:00:00Z",
+        "value": 4.233
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T18:00:00Z",
+        "value": 71.947
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T19:00:00Z",
+        "value": 3.438
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T19:00:00Z",
+        "value": 74.904
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T20:00:00Z",
+        "value": 3.304
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T20:00:00Z",
+        "value": 76.21
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T21:00:00Z",
+        "value": 2.945
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T21:00:00Z",
+        "value": 76.244
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T22:00:00Z",
+        "value": 2.541
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T22:00:00Z",
+        "value": 8.176
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T22:00:00Z",
+        "value": 80.206
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T23:00:00Z",
+        "value": 2.129
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T23:00:00Z",
+        "value": 21.52
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T23:00:00Z",
+        "value": 84.404
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-07T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T00:00:00Z",
+        "value": 1.849
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T00:00:00Z",
+        "value": 82.323
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T01:00:00Z",
+        "value": 1.218
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T01:00:00Z",
+        "value": 83.258
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T02:00:00Z",
+        "value": -0.026
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T02:00:00Z",
+        "value": 86.706
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T03:00:00Z",
+        "value": -0.443
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T03:00:00Z",
+        "value": 87.189
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T04:00:00Z",
+        "value": 0.037
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T04:00:00Z",
+        "value": 84.934
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T05:00:00Z",
+        "value": 1.973
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T05:00:00Z",
+        "value": 79.689
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T06:00:00Z",
+        "value": 3.041
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T06:00:00Z",
+        "value": 76.836
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T07:00:00Z",
+        "value": 3.776
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T07:00:00Z",
+        "value": 73.271
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T08:00:00Z",
+        "value": 5.274
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T08:00:00Z",
+        "value": 62.07
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T09:00:00Z",
+        "value": 7.819
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T09:00:00Z",
+        "value": 49.244
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T10:00:00Z",
+        "value": 9.915
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T10:00:00Z",
+        "value": 39.654
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T11:00:00Z",
+        "value": 10.323
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T11:00:00Z",
+        "value": 36.135
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T12:00:00Z",
+        "value": 10.859
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T12:00:00Z",
+        "value": 34.945
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T13:00:00Z",
+        "value": 10.792
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T13:00:00Z",
+        "value": 32.186
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T14:00:00Z",
+        "value": 10.979
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T14:00:00Z",
+        "value": 28.328
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T15:00:00Z",
+        "value": 11.543
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T15:00:00Z",
+        "value": 25.032
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T16:00:00Z",
+        "value": 11.484
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T16:00:00Z",
+        "value": 25.075
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T17:00:00Z",
+        "value": 10.867
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T17:00:00Z",
+        "value": 28.156
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T18:00:00Z",
+        "value": 7.776
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T18:00:00Z",
+        "value": 41.062
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T19:00:00Z",
+        "value": 5.161
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T19:00:00Z",
+        "value": 49.575
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T19:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T20:00:00Z",
+        "value": 3.597
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T20:00:00Z",
+        "value": 52.634
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T21:00:00Z",
+        "value": 3.048
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T21:00:00Z",
+        "value": 56.131
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T21:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T22:00:00Z",
+        "value": 3.959
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T22:00:00Z",
+        "value": 54.487
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T23:00:00Z",
+        "value": 4.005
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T23:00:00Z",
+        "value": 59.33
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-08T23:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T00:00:00Z",
+        "value": 3.173
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T00:00:00Z",
+        "value": 64.525
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T01:00:00Z",
+        "value": 3.161
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T01:00:00Z",
+        "value": 64.031
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T01:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T02:00:00Z",
+        "value": 3.16
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T02:00:00Z",
+        "value": 60.795
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T02:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T03:00:00Z",
+        "value": 3.424
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T03:00:00Z",
+        "value": 58.73
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T03:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T04:00:00Z",
+        "value": 5.264
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T04:00:00Z",
+        "value": 53.434
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T04:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T05:00:00Z",
+        "value": 5.748
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T05:00:00Z",
+        "value": 57.066
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T05:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T06:00:00Z",
+        "value": 6.327
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T06:00:00Z",
+        "value": 56.804
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T06:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T07:00:00Z",
+        "value": 6.991
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T07:00:00Z",
+        "value": 55.951
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T07:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T08:00:00Z",
+        "value": 6.968
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T08:00:00Z",
+        "value": 58.451
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T08:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T09:00:00Z",
+        "value": 7.631
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T09:00:00Z",
+        "value": 58.203
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T09:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T10:00:00Z",
+        "value": 7.86
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T10:00:00Z",
+        "value": 60.088
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T10:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T11:00:00Z",
+        "value": 8.15
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T11:00:00Z",
+        "value": 58.781
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T11:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T12:00:00Z",
+        "value": 8.359
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T12:00:00Z",
+        "value": 24.454
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T12:00:00Z",
+        "value": 60.96
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T12:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T13:00:00Z",
+        "value": 8.316
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T13:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T13:00:00Z",
+        "value": 65.976
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T13:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T14:00:00Z",
+        "value": 8.288
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T14:00:00Z",
+        "value": 51.129
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T14:00:00Z",
+        "value": 69.915
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T14:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T15:00:00Z",
+        "value": 8.825
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T15:00:00Z",
+        "value": 8.277
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T15:00:00Z",
+        "value": 67.431
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T15:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T16:00:00Z",
+        "value": 9.149
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T16:00:00Z",
+        "value": 0.147
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T16:00:00Z",
+        "value": 67.732
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T16:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T17:00:00Z",
+        "value": 8.99
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T17:00:00Z",
+        "value": 64.817
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T17:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T18:00:00Z",
+        "value": 7.996
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T18:00:00Z",
+        "value": 25.091
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T18:00:00Z",
+        "value": 73.627
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T18:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T19:00:00Z",
+        "value": 6.848
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T19:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T19:00:00Z",
+        "value": 85.147
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T19:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T20:00:00Z",
+        "value": 6.586
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T20:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T20:00:00Z",
+        "value": 89.132
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T20:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T21:00:00Z",
+        "value": 6.427
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T21:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T21:00:00Z",
+        "value": 91.257
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T21:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T22:00:00Z",
+        "value": 6.383
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T22:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T22:00:00Z",
+        "value": 91.799
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T22:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T23:00:00Z",
+        "value": 6.278
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T23:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T23:00:00Z",
+        "value": 93.895
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-09T23:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T00:00:00Z",
+        "value": 6.081
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T00:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T00:00:00Z",
+        "value": 96.573
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T00:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T01:00:00Z",
+        "value": 5.981
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T01:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T01:00:00Z",
+        "value": 98.266
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T01:00:00Z",
+        "value": 0.7
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T02:00:00Z",
+        "value": 5.814
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T02:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T02:00:00Z",
+        "value": 99.74
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T02:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T03:00:00Z",
+        "value": 5.854
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T03:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T03:00:00Z",
+        "value": 99.964
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T03:00:00Z",
+        "value": 1.6
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T04:00:00Z",
+        "value": 5.946
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T04:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T04:00:00Z",
+        "value": 99.965
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T04:00:00Z",
+        "value": 0.6
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T05:00:00Z",
+        "value": 6.31
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T05:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T05:00:00Z",
+        "value": 99.965
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T05:00:00Z",
+        "value": 0.4
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T06:00:00Z",
+        "value": 6.536
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T06:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T06:00:00Z",
+        "value": 99.966
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T06:00:00Z",
+        "value": 0.7
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T07:00:00Z",
+        "value": 6.914
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T07:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T07:00:00Z",
+        "value": 98.993
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T07:00:00Z",
+        "value": 1.5
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T08:00:00Z",
+        "value": 7.35
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T08:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T08:00:00Z",
+        "value": 96.812
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T08:00:00Z",
+        "value": 1.3
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T09:00:00Z",
+        "value": 7.301
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T09:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T09:00:00Z",
+        "value": 93.704
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T09:00:00Z",
+        "value": 1.2
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T10:00:00Z",
+        "value": 6.315
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T10:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T10:00:00Z",
+        "value": 87.026
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T10:00:00Z",
+        "value": 1.2
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T11:00:00Z",
+        "value": 6.007
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T11:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T11:00:00Z",
+        "value": 89.729
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T11:00:00Z",
+        "value": 2.3
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T12:00:00Z",
+        "value": 6.13
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T12:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T12:00:00Z",
+        "value": 93.591
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T12:00:00Z",
+        "value": 1.8
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T13:00:00Z",
+        "value": 6.083
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T13:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T13:00:00Z",
+        "value": 89.592
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T13:00:00Z",
+        "value": 1.4
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T14:00:00Z",
+        "value": 5.823
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T14:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T14:00:00Z",
+        "value": 91.959
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T14:00:00Z",
+        "value": 0.5
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T15:00:00Z",
+        "value": 6.085
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T15:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T15:00:00Z",
+        "value": 89.841
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T15:00:00Z",
+        "value": 0.8
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T16:00:00Z",
+        "value": 6.34
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T16:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T16:00:00Z",
+        "value": 89.713
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T16:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T17:00:00Z",
+        "value": 6.008
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T17:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T17:00:00Z",
+        "value": 95.468
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T17:00:00Z",
+        "value": 0.4
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T18:00:00Z",
+        "value": 5.484
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T18:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T18:00:00Z",
+        "value": 98.077
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T18:00:00Z",
+        "value": 0.8
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T19:00:00Z",
+        "value": 5.153
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T19:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T19:00:00Z",
+        "value": 99.642
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T19:00:00Z",
+        "value": 0.1
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T20:00:00Z",
+        "value": 4.981
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T20:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T20:00:00Z",
+        "value": 99.965
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T20:00:00Z",
+        "value": 0.0
+    },
+    {
+        "elementMeasurementTypeId": "TM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T21:00:00Z",
+        "value": 4.862
+    },
+    {
+        "elementMeasurementTypeId": "BT",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T21:00:00Z",
+        "value": 60.0
+    },
+    {
+        "elementMeasurementTypeId": "UM",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T21:00:00Z",
+        "value": 99.964
+    },
+    {
+        "elementMeasurementTypeId": "RR",
+        "logIntervalId": 1,
+        "timeMeasured": "2019-05-10T21:00:00Z",
+        "value": 0.1
+    }
+]

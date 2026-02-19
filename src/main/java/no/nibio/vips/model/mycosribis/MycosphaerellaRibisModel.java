@@ -36,6 +36,8 @@ import no.nibio.vips.model.ModelId;
  */
 public class MycosphaerellaRibisModel extends I18nImpl implements Model {
 
+    public final static ModelId MODEL_ID = new ModelId("MYCOSRIBIS");
+
 
     public MycosphaerellaRibisModel()
     {

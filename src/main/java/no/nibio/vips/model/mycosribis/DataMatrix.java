@@ -22,9 +22,11 @@ package no.nibio.vips.model.mycosribis;
 import no.nibio.vips.util.DateMap;
 
 public class DataMatrix extends DateMap {
-    public final static String CONSECUTIVE_DRY_DAYS = "CDD"; // Consecutive Dry Days
-    public final static String DD_SUM_ASCOSPORES = "DSA"; // Day degree sum for ascospores
-    public final static String DD_SUM_CONIDIOSPORES = "DSC"; // Day degree sum for conidiospores
-    public final static String DAILY_LW = "DBT"; // Daily leaf wetness duration in hours
+    public final static String CONSECUTIVE_DRY_DAYS = "CONSECUTIVE_DRY_DAYS"; // Consecutive Dry Days
+    public final static String DD_SUM_ASCOSPORES = "DD_SUM_ASCOSPORES"; // Day degree sum for ascospores
+    public final static String DD_SUM_CONIDIA = "DD_SUM_CONIDIA"; // Day degree sum for conidiospores
+    public final static String PROPORTION_MATURE_ASCOSPORES = "PROPORTION_MATURE_ASCOSPORES";
+    public final static String PROPORTION_MATURE_CONIDIA = "PROPORTION_MATURE_CONIDIA";
+    public final static String DAILY_LW_HOURS = "DAILY_BT_HOURS"; // Daily leaf wetness duration in hours
     
 }
