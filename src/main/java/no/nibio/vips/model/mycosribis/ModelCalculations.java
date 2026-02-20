@@ -89,18 +89,15 @@ public class ModelCalculations {
      * Calculates the spore maturation for conidia and ascospores, stores results in the data matrix
      * @param dataMatrix
      */
-    public void calculateSporeMaturation(DateMap dataMatrix, TimeZone timeZone, ModelId modelId) {
-        Date startDate = dataMatrix.getFirstDateWithValues();
+    public void calculateSporeMaturation(DateMap dataMatrix, TimeZone timeZone, Date startDateSporeMaturation, ModelId modelId) {
         Date endDate = dataMatrix.getLastDateWithValues();
         Integer thresholdConsecuticeDryDaysAscospores = 7;
         Integer thresholdConsecuticeDryDaysConidia = 4;
         int consecutiveDryDays = 0;
         Double DDSumAscospores = 0.0;
         Double DDSumConidia = 0.0;
-        Double proportionMatureAscospores = 0.0;
-        Double proportionMatureConidia = 0.0;
         
-        Date currentDate = startDate;
+        Date currentDate = startDateSporeMaturation;
         Calendar cal = Calendar.getInstance(timeZone);
         cal.setTime(currentDate);
         while(currentDate.compareTo(endDate) <= 0)
@@ -155,8 +152,8 @@ public class ModelCalculations {
      * @param allObservations
      * @return
      */
-    public DateMap initDataMatrix(List<WeatherObservation> allObservations) {
-        DateMap dataMatrix = new DateMap();
+    public DataMatrix initDataMatrix(List<WeatherObservation> allObservations) {
+        DataMatrix dataMatrix = new DataMatrix();
         for(WeatherObservation obs : allObservations) {
             dataMatrix.setParamDoubleValueForDate(obs.getTimeMeasured(), obs.getElementMeasurementTypeId(), obs.getValue());
         }   
@@ -164,7 +161,7 @@ public class ModelCalculations {
     }
 
     /**
-     * Checks that the provided weather data contains the necessary observations for the model and initializes the data matrix.
+     * Checks that the provided weather data contains the necessary observations for the model
      * @param observations
      */
     public List<WeatherObservation> validateAndInitializeWeatherData(List<WeatherObservation> observations, TimeZone timeZone) throws ConfigValidationException{
