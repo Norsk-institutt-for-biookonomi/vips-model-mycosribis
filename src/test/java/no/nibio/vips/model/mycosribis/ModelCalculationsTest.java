@@ -18,7 +18,6 @@
  */
 package no.nibio.vips.model.mycosribis;
 
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
@@ -39,6 +38,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.AssertionFailedError;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -256,7 +257,9 @@ public class ModelCalculationsTest {
         DateMap dataMatrix = instance.initDataMatrix(allObservations);
         //System.out.println(dataMatrix.toCSV());
         ModelId modelId = MycosphaerellaRibisModel.MODEL_ID;
-        instance.calculateSporeMaturation(dataMatrix, timeZone, modelId);
+
+        
+        
         //System.out.println(dataMatrix.toCSV());
         // Test for consecutive dry days
         int[] cdd = {1,0,1,2,3,4,5,6,0,0,0,1,2,0,1,2,0,1,2,3,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,0,1};
@@ -264,18 +267,59 @@ public class ModelCalculationsTest {
         double[] ddsum_a = {20.2,42,64.9,81.8,92.6,104.7,123,141.4,161.6,181.4,195.4,210.5,223.6,237.2,251.5,266,277.5,290.8,305.1,316.5,326,336.5,351.4,367.6,388.2,409.7,431.2,431.2,431.2,431.2,431.2,431.2,431.2,431.2,431.2,431.2,431.2,431.2,446.8,467.2};
         double[] r_d_c = {0.187945002913553,0.283913862997721,0.392624947535078,0.47213028427304,0.520902345227088,0.520902345227088,0.520902345227088,0.520902345227088,0.605580101618331,0.678587425667368,0.723812994555606,0.766735858771659,0.799298302255655,0.828848530671433,0.855668055353501,0.878891432452475,0.89478866177124,0.91072280583163,0.92528617242865,0.935236077127746,0.942539528517805,0.949683264629719,0.958356401001937,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.966128953967331,0.972259135451774,0.978651750380572};
         double[] r_d_a = {0.000712240885033828,0.00377652822391743,0.014429758835193,0.0314154070756603,0.0478431645192446,0.0721511329249885,0.121157996523407,0.184060705385334,0.264962205011599,0.350889300149704,0.412579667236057,0.477782557979756,0.531975529056105,0.58501437389311,0.636620532016749,0.684229053688444,0.718528918887265,0.754433420964183,0.788711436409653,0.813013406255088,0.831350120000637,0.849728826269786,0.872688107559728,0.893938365141164,0.916161363598242,0.934586982156168,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.949075891403917,0.957582439581746,0.966637319975743};
-        Date startTM = dataMatrix.getFirstDateWithParameterValue("TM");
-        Date endTM = dataMatrix.getLastDateWithParameterValue("TM");
-
-        // For each day, values for TM, BT and RR have been set
-        Date currentDate = startTM;
+        
+        // Set start date for spore maturation one day off into future to make it fail
         Calendar cal = Calendar.getInstance(timeZone);
-        cal.setTime(currentDate);
+        cal.set(2018, Calendar.JUNE, 2, 0, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+
+        instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime(), modelId);
+        
+        // The first date we set is one day off from expected results, so should fail 
+        Boolean failed = false;
+        try {
+            assertEquals(ddsum_c[0], dataMatrix.getParamDoubleValueForDate(
+                dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS)
+            , MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA),0.5);
+        }
+        catch(AssertionFailedError afe)
+        {
+            failed = true;
+        }
+
+        assertTrue(failed);
+
+        // Same thing, but two days before we have weather data
+        failed = false;
+        cal.set(2018, Calendar.MAY, 29, 0, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        try {
+            instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime(), modelId);
+        
+            assertEquals(ddsum_c[0], dataMatrix.getParamDoubleValueForDate(
+                dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS)
+            , MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA),0.5);
+        }
+        catch(AssertionFailedError | NullPointerException ex)
+        {
+            failed = true;
+        }
+
+        assertTrue(failed);
+
+        // Set the correct start date and test the entire dataset
+        cal.set(2018, Calendar.JUNE, 1, 0, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime(), modelId);
+        Date startCDD = dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS);
+        Date endCDD = dataMatrix.getLastDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS);
+        Date currentDate = startCDD;
         int index = 0;
-        while(currentDate.compareTo(endTM) <= 0)
+        while(currentDate.compareTo(endCDD) <= 0)
         {
             assertEquals(cdd[index], dataMatrix.getParamIntValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS));
             assertEquals(ddsum_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA),0.5);
+            assertEquals(ddsum_a[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_ASCOSPORES),0.5);
             assertEquals(r_d_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA),0.1);
             assertEquals(r_d_a[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES),0.1);
             cal.add(Calendar.DATE, 1);
