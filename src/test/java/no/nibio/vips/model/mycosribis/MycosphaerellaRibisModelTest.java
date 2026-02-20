@@ -18,10 +18,16 @@
  */
 package no.nibio.vips.model.mycosribis;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
+
 import no.nibio.vips.entity.ModelConfiguration;
 import no.nibio.vips.entity.Result;
+import no.nibio.vips.entity.WeatherObservation;
 import no.nibio.vips.model.ModelId;
+import no.nibio.vips.util.test.WeatherDataFileReader;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -60,7 +66,14 @@ public class MycosphaerellaRibisModelTest {
     @Test
     public void testGetResult() throws Exception {
         System.out.println("getResult");
+        ModelConfiguration config = new ModelConfiguration();
+        config.setModelId(MycosphaerellaRibisModel.MODEL_ID.toString());
+        config.setConfigParameter("observations", new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"));
+        config.setConfigParameter("timeZone", "Europe/Oslo");
+        config.setConfigParameter("startDateSporeMaturation", "2018-06-01");
         MycosphaerellaRibisModel instance = new MycosphaerellaRibisModel();
+        instance.setConfiguration(config);
+
         List<Result> expResult = null;
         List<Result> result = instance.getResult();
         assertEquals(expResult, result);
@@ -74,11 +87,13 @@ public class MycosphaerellaRibisModelTest {
     @Test
     public void testSetConfiguration() throws Exception {
         System.out.println("setConfiguration");
-        ModelConfiguration arg0 = null;
+        ModelConfiguration config = new ModelConfiguration();
+        config.setModelId(MycosphaerellaRibisModel.MODEL_ID.toString());
+        config.setConfigParameter("observations", new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"));
+        config.setConfigParameter("timeZone", "Europe/Oslo");
+        config.setConfigParameter("startDateSporeMaturation", "2018-06-01");
         MycosphaerellaRibisModel instance = new MycosphaerellaRibisModel();
-        instance.setConfiguration(arg0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance.setConfiguration(config);
     }
 
     /**
