@@ -28,5 +28,6 @@ public class DataMatrix extends DateMap {
     public final static String PROPORTION_MATURE_ASCOSPORES = "PROPORTION_MATURE_ASCOSPORES";
     public final static String PROPORTION_MATURE_CONIDIA = "PROPORTION_MATURE_CONIDIA";
     public final static String DAILY_LW_HOURS = "DAILY_BT_HOURS"; // Daily leaf wetness duration in hours
+    public final static String ACCUMULATED_MILLS = "ACCMILLS";
     
 }

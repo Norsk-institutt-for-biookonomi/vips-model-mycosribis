@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
@@ -43,6 +44,10 @@ import no.nibio.vips.util.WeatherUtil;
  * @author Tor-Einar Skog <tor-einar.skog@nibio.no>
  */
 public class ModelCalculations {
+
+    // Constants for Mills table calculations
+    private final static Double LEAF_WETNESS_THRESHOLD = 20d;
+    private final static Integer MAX_LEAF_DRYING_TIME = 8;
 
     /**
      * Determines if a day is considered a "dry day" based on precipitation and leaf wetness duration.
@@ -89,7 +94,7 @@ public class ModelCalculations {
      * Calculates the spore maturation for conidia and ascospores, stores results in the data matrix
      * @param dataMatrix
      */
-    public void calculateSporeMaturation(DateMap dataMatrix, TimeZone timeZone, Date startDateSporeMaturation, ModelId modelId) {
+    public void calculateSporeMaturation(DateMap dataMatrix, TimeZone timeZone, Date startDateSporeMaturation) {
         Date endDate = dataMatrix.getLastDateWithValues();
         Integer thresholdConsecuticeDryDaysAscospores = 7;
         Integer thresholdConsecuticeDryDaysConidia = 4;
@@ -110,16 +115,16 @@ public class ModelCalculations {
             {
                 consecutiveDryDays = 0;
             }
-            dataMatrix.setParamIntValueForDate(currentDate, modelId.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS, consecutiveDryDays);
+            dataMatrix.setParamIntValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS, consecutiveDryDays);
 
             DDSumAscospores += consecutiveDryDays < thresholdConsecuticeDryDaysAscospores ? (dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)) : 0.0;
             DDSumConidia += consecutiveDryDays < thresholdConsecuticeDryDaysConidia ? (dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)) : 0.0;
 
-            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.DD_SUM_ASCOSPORES, DDSumAscospores);
-            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.DD_SUM_CONIDIA, DDSumConidia);
+            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_ASCOSPORES, DDSumAscospores);
+            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA, DDSumConidia);
 
-            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES, this.getProportionMatureAscospores(DDSumAscospores));
-            dataMatrix.setParamDoubleValueForDate(currentDate, modelId.toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA, this.getProportionMatureConidia(DDSumConidia));
+            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES, this.getProportionMatureAscospores(DDSumAscospores));
+            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA, this.getProportionMatureConidia(DDSumConidia));
 
             cal.add(Calendar.DATE, 1);
             currentDate = cal.getTime();
@@ -162,34 +167,34 @@ public class ModelCalculations {
 
     /**
      * Checks that the provided weather data contains the necessary observations for the model
+     * Required: Hourly values for TM and BT, hourly or daily for RR
      * @param observations
      */
-    public List<WeatherObservation> validateAndInitializeWeatherData(List<WeatherObservation> observations, TimeZone timeZone) throws ConfigValidationException{
+    public Map<Integer,List<WeatherObservation>> validateAndInitializeWeatherData(List<WeatherObservation> observations, TimeZone timeZone) throws ConfigValidationException{
         WeatherUtil weatherUtil = new WeatherUtil();
-        // Temperature
+        // Temperature - must be hourly
         List<String> acceptedTypes = List.of(WeatherElements.TEMPERATURE_MEAN, WeatherElements.TEMPERATURE_INSTANTANEOUS);
-        List<WeatherObservation> TM = observations.stream().filter(obs -> acceptedTypes.contains(obs.getElementMeasurementTypeId())).collect(Collectors.toList());
+        List<WeatherObservation> TMh = observations.stream().filter(obs -> acceptedTypes.contains(obs.getElementMeasurementTypeId())).collect(Collectors.toList());
+        List<WeatherObservation> TMd;
         // List cannot be empty
-        if (TM.isEmpty()) {
+        if (TMh.isEmpty()) {
             throw new ConfigValidationException("Temperature observations must contain at least one valid item.");
         }
-        // If daily: must be mean temperature
-        if(TM.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1D && obs.getElementMeasurementTypeId() != WeatherElements.TEMPERATURE_MEAN)) {
-            throw new ConfigValidationException("Daily temperature observations must be mean temperature.");
+        // Must be hourly
+        if(TMh.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1D )) {
+            throw new ConfigValidationException("Temperature weather data must be hourly");
         }
         // Values must be in range -50 to 60 degrees Celsius
-        if(TM.stream().anyMatch(obs -> obs.getValue() < -50.0 || obs.getValue() > 60.0)) {
+        if(TMh.stream().anyMatch(obs -> obs.getValue() < -50.0 || obs.getValue() > 60.0)) {
             throw new ConfigValidationException("Temperature observations must have values between -50 and 60 degrees Celsius.");
         }
-        // If hourly: Must contain at least 15 hourly observations/day with valid (mean or instantaneous) temperature values 
-        if(TM.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1H))
-        {
-            try {
-                TM = weatherUtil.getAggregatedDailyValues(TM, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_AVERAGE);
-            } catch (WeatherObservationListException | InvalidAggregationTypeException e) {
-                throw new ConfigValidationException(e.getMessage());
-            }
+        // Must contain at least 15 hourly observations/day with valid (mean or instantaneous) temperature values 
+        try {
+            TMd = weatherUtil.getAggregatedDailyValues(TMh, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_AVERAGE);
+        } catch (WeatherObservationListException | InvalidAggregationTypeException e) {
+            throw new ConfigValidationException(e.getMessage());
         }
+       
 
         // Precipitation
         List<WeatherObservation> RR = observations.stream().filter(obs->obs.getElementMeasurementTypeId().equals(WeatherElements.PRECIPITATION)).collect(Collectors.toList());
@@ -213,21 +218,22 @@ public class ModelCalculations {
         }
 
         // Leaf Wetness        
-        List<WeatherObservation> BT = observations.stream().filter(obs-> WeatherElements.LEAF_WETNESS_ALL_VARIANTS.contains(obs.getElementMeasurementTypeId())).collect(Collectors.toList());
-        if(BT.isEmpty())
+        List<WeatherObservation> BTd = new ArrayList<>();
+        List<WeatherObservation> BTh = observations.stream().filter(obs-> WeatherElements.LEAF_WETNESS_ALL_VARIANTS.contains(obs.getElementMeasurementTypeId())).collect(Collectors.toList());
+        if(BTh.isEmpty())
         {
             throw new ConfigValidationException("Leaf wetness observations must contain at least one valid item.");
         }
         // If hourly: Must contain at least 15 hourly observations/day with valid leaf wetness values (e.g., 0 to 60 minutes per hour)
-        if(BT.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1H))
+        if(BTh.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1H))
         {
-            if(BT.stream().anyMatch(obs -> obs.getValue() < 0.0 || obs.getValue() > 60.0)) {
+            if(BTh.stream().anyMatch(obs -> obs.getValue() < 0.0 || obs.getValue() > 60.0)) {
                 throw new ConfigValidationException("Hourly leaf wetness observations must have values between 0 and 60 minutes per hour.");
             }
             // Convert hourly leaf wetness to daily leaf wetness duration in hours
             // using the getDailyLW method defined above, which counts the number of hours with leaf wetness = 60 minutes
-            Map<Date, List<WeatherObservation>> hourlyValuesPerDay = weatherUtil.getHourlyValuesPerDay(BT, timeZone);
-            BT.clear();
+            Map<Date, List<WeatherObservation>> hourlyValuesPerDay = weatherUtil.getHourlyValuesPerDay(BTh, timeZone);
+            
             for (Date day : hourlyValuesPerDay.keySet()) {
                 List<WeatherObservation> hourlyLWForDay = hourlyValuesPerDay.get(day);
                 Long dailyLWHours = getDailyLW(hourlyLWForDay);
@@ -237,31 +243,94 @@ public class ModelCalculations {
                 dailyLWObservation.setLogIntervalId(WeatherObservation.LOG_INTERVAL_ID_1D);
                 dailyLWObservation.setElementMeasurementTypeId(MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS);
                 dailyLWObservation.setValue(dailyLWHours.doubleValue());
-                BT.add(dailyLWObservation);
+                BTd.add(dailyLWObservation);
             }
         }
-        // If daily: Value must be in range 0-24 (25 for DST day)
-        else if(BT.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1D && (obs.getValue() < 0.0 || obs.getValue() > 25.0))) {
-            throw new ConfigValidationException("Daily leaf wetness observations must have values between 0 and 24 hours (25 for DST day).");
+        // Raw BT values must be hourly
+        if(BTh.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1D)) {
+            throw new ConfigValidationException("Leaf wetness weather data must be hourly");
         }
 
-        // Check that the lists have equal length
-        if (!(TM.size() == RR.size() && RR.size() == BT.size())) {
+        // Check that the daily lists have equal length
+        if (!(TMd.size() == RR.size() && RR.size() == BTd.size())) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must have the same number of valid items.");
         }
         // Check that the lists start and end on the same date
-        if (!(TM.get(0).getTimeMeasured().equals(RR.get(0).getTimeMeasured()) && RR.get(0).getTimeMeasured().equals(BT.get(0).getTimeMeasured()))) {
+        if (!(TMd.get(0).getTimeMeasured().equals(RR.get(0).getTimeMeasured()) && RR.get(0).getTimeMeasured().equals(BTd.get(0).getTimeMeasured()))) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must start on the same date.");
         }
-        if (!(TM.get(TM.size() - 1).getTimeMeasured().equals(RR.get(RR.size() - 1).getTimeMeasured()) && RR.get(RR.size() - 1).getTimeMeasured().equals(BT.get(BT.size() - 1).getTimeMeasured()))) {
+        if (!(TMd.get(TMd.size() - 1).getTimeMeasured().equals(RR.get(RR.size() - 1).getTimeMeasured()) && RR.get(RR.size() - 1).getTimeMeasured().equals(BTd.get(BTd.size() - 1).getTimeMeasured()))) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must end on the same date.");
         }
         
-        // Combine all validated observations into a single list and return
+        // Combine all validated daily observations into a single list
         List<WeatherObservation> validatedObservations = new ArrayList<>();
-        validatedObservations.addAll(TM);
+        validatedObservations.addAll(TMd);
         validatedObservations.addAll(RR);
-        validatedObservations.addAll(BT);
-        return validatedObservations;
+        validatedObservations.addAll(BTd);
+        Map<Integer, List<WeatherObservation>> retVal = new HashMap<>();
+        retVal.put(WeatherObservation.LOG_INTERVAL_ID_1D, validatedObservations);
+        // Adding hourly observations for TM and BT for Mills table
+        TMh.addAll(BTh);
+        retVal.put(WeatherObservation.LOG_INTERVAL_ID_1H, TMh);
+        return retVal;
+    }
+
+    /**
+     * Loops through dates, calculates Mill's value for each hour and accumulates
+     * For this model, we only use the Ascospore part of Mills table
+     * Depending on hourly values for weather data
+     * @throws WeatherObservationListException 
+     */
+    public DataMatrix accumulateMills(DataMatrix hourlyData, DataMatrix dailyData, Date startDateSporeMaturation, TimeZone timeZone) throws WeatherObservationListException
+    {
+        WeatherUtil weatherUtil = new WeatherUtil();
+        Double accumulatedMills = 0d;
+        Double ascosporeMaturity = 0d;
+        // We have already calculated this
+        //AscosporeMaturityTable ascosporeMaturityTable = new AscosporeMaturityTable();
+        MillsTable millsTable = new MillsTable();
+        Date currentTimeStamp = startDateSporeMaturation;
+        Date endTimeStamp = hourlyData.getLastDateWithParameterValue(WeatherElements.TEMPERATURE_MEAN);
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.setTime(currentTimeStamp);
+        Integer hoursSinceLeafWetness = 0;
+        while(currentTimeStamp.compareTo(endTimeStamp) <= 0 && ascosporeMaturity < 100)
+        {
+            // We update and store the ascospore maturity only at midnight, when we have an updated accumulated temperature
+            if(currentTimeStamp.equals(weatherUtil.normalizeToExactDate(currentTimeStamp, timeZone)))
+            {
+                ascosporeMaturity = dailyData.getParamDoubleValueForDate(currentTimeStamp, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+                hourlyData.setParamDoubleValueForDate(currentTimeStamp, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity);
+            }
+
+
+            // We accumulate Mills only when there are humid conditions
+            Double currentLeafWetness = hourlyData.getParamDoubleValueForDate(currentTimeStamp, WeatherElements.LEAF_WETNESS_DURATION);
+            if(currentLeafWetness != null && currentLeafWetness < LEAF_WETNESS_THRESHOLD)
+            {
+                hoursSinceLeafWetness++;
+                // If dry for long enough, reset accumulated Mills
+                if(hoursSinceLeafWetness >= MAX_LEAF_DRYING_TIME)
+                {
+                    accumulatedMills = 0d;
+                }
+            }
+            else
+            {
+                hoursSinceLeafWetness = 0;
+                Double currentTemperature = hourlyData.getParamDoubleValueForDate(currentTimeStamp, WeatherElements.TEMPERATURE_MEAN);
+                if(currentTemperature != null)
+                {
+                    accumulatedMills += millsTable.getMillsValue(currentTemperature, 1);
+                }
+            }
+
+            hourlyData.setParamDoubleValueForDate(currentTimeStamp, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.ACCUMULATED_MILLS, accumulatedMills);
+            
+            cal.add(Calendar.HOUR, 1);
+            currentTimeStamp = cal.getTime();
+        }
+        return hourlyData;
     }
 } 

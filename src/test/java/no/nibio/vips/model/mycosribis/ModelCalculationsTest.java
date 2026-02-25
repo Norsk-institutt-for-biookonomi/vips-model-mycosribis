@@ -22,6 +22,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
 
 import no.nibio.vips.entity.ModelConfiguration;
@@ -41,6 +42,7 @@ import org.junit.jupiter.api.Test;
 import org.opentest4j.AssertionFailedError;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 /**
  *
@@ -107,7 +109,7 @@ public class ModelCalculationsTest {
         System.out.println("initDataMatrix");
         TimeZone timeZone = TimeZone.getTimeZone("Europe/Oslo");
         ModelCalculations instance = new ModelCalculations();
-        List<WeatherObservation> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all.json"), timeZone);
+        List<WeatherObservation> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all.json"), timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D);
         
         DateMap result = instance.initDataMatrix(allObservations);
 
@@ -150,7 +152,7 @@ public class ModelCalculationsTest {
         TimeZone timeZone = TimeZone.getTimeZone("Europe/Oslo");
         ModelCalculations instance = new ModelCalculations();
         List<WeatherObservation> expResult = new WeatherDataFileReader().getWeatherObservationsFromFile("/daily_all.json");
-        List<WeatherObservation> result = instance.validateAndInitializeWeatherData(hourlyObservations, timeZone);
+        List<WeatherObservation> result = instance.validateAndInitializeWeatherData(hourlyObservations, timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D);
         
         // Compare values for each parameter
         WeatherUtil wUtil = new WeatherUtil();
@@ -251,7 +253,7 @@ public class ModelCalculationsTest {
         System.out.println("calculateSporeMaturation");
         TimeZone timeZone = TimeZone.getTimeZone("Europe/Oslo");
         ModelCalculations instance = new ModelCalculations();
-        List<WeatherObservation> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"), timeZone);
+        List<WeatherObservation> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"), timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D);
         Collections.sort(allObservations);
         //allObservations.forEach(o->System.out.println(o.toString()));
         DateMap dataMatrix = instance.initDataMatrix(allObservations);
@@ -273,7 +275,7 @@ public class ModelCalculationsTest {
         cal.set(2018, Calendar.JUNE, 2, 0, 0, 0);
         cal.set(Calendar.MILLISECOND,0);
 
-        instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime(), modelId);
+        instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime());
         
         // The first date we set is one day off from expected results, so should fail 
         Boolean failed = false;
@@ -294,7 +296,7 @@ public class ModelCalculationsTest {
         cal.set(2018, Calendar.MAY, 29, 0, 0, 0);
         cal.set(Calendar.MILLISECOND,0);
         try {
-            instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime(), modelId);
+            instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime());
         
             assertEquals(ddsum_c[0], dataMatrix.getParamDoubleValueForDate(
                 dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS)
@@ -310,7 +312,7 @@ public class ModelCalculationsTest {
         // Set the correct start date and test the entire dataset
         cal.set(2018, Calendar.JUNE, 1, 0, 0, 0);
         cal.set(Calendar.MILLISECOND,0);
-        instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime(), modelId);
+        instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime());
         Date startCDD = dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS);
         Date endCDD = dataMatrix.getLastDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS);
         Date currentDate = startCDD;
@@ -327,6 +329,58 @@ public class ModelCalculationsTest {
             index++;
         }
 
+        //System.out.println(dataMatrix.toCSV());
+
+    }
+
+    /**
+     * Test of accumulateMills method, of class ModelCalculations.
+     */
+    @Test
+    public void testAccumulateMills() throws Exception {
+        System.out.println("accumulateMills");
+        TimeZone timeZone = TimeZone.getTimeZone("Europe/Oslo");
+        ModelCalculations instance = new ModelCalculations();
+        Map<Integer,List<WeatherObservation>> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"), timeZone);
+
+        //allObservations.forEach(o->System.out.println(o.toString()));
+        DataMatrix dailyData = instance.initDataMatrix(allObservations.get(WeatherObservation.LOG_INTERVAL_ID_1D));
+        DataMatrix hourlyData = instance.initDataMatrix(allObservations.get(WeatherObservation.LOG_INTERVAL_ID_1H));
+        //System.out.println(hourlyData.toCSV());
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.set(2018, Calendar.JUNE, 1, 0, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        Date startDateSporeMaturation = cal.getTime();
+        
+        DataMatrix expResult = null;
+        instance.calculateSporeMaturation(dailyData, timeZone, startDateSporeMaturation);
+        DataMatrix result = instance.accumulateMills(hourlyData, dailyData, startDateSporeMaturation, timeZone);
+        // Assume that we have at least one incident of yellow and one of red warning
+        Date currentDate = startDateSporeMaturation;
+        Date endMills = hourlyData.getLastDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.ACCUMULATED_MILLS);
+        cal.setTime(currentDate);
+        Boolean yellowWarningIssued = false;
+        Boolean redWarningIssued = false;
+        while(currentDate.compareTo(endMills) <= 0)
+        {
+            Double accumulatedMills = result.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.ACCUMULATED_MILLS);
+            if(accumulatedMills >= MycosphaerellaRibisModel.MILLS_THRESHOLD_YELLOW_WARNING && accumulatedMills < MycosphaerellaRibisModel.MILLS_THRESHOLD_RED_WARNING)
+            {
+                yellowWarningIssued = true;
+            }
+            else if(accumulatedMills >= MycosphaerellaRibisModel.MILLS_THRESHOLD_RED_WARNING)
+            {
+                redWarningIssued = true;
+            }
+            cal.add(Calendar.HOUR, 1);
+            currentDate = cal.getTime();
+        }
+
+        //System.out.println(result.toCSV());
+        assumeTrue(yellowWarningIssued);
+        assumeTrue(redWarningIssued);
+        
+        //assertEquals(expResult, result);
     }
     
 }

@@ -25,10 +25,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
-import com.ibm.icu.impl.locale.LikelySubtags.Data;
-
 import no.nibio.vips.entity.ModelConfiguration;
 import no.nibio.vips.entity.Result;
+import no.nibio.vips.entity.WeatherObservation;
 import no.nibio.vips.i18n.I18nImpl;
 import no.nibio.vips.model.ConfigValidationException;
 import no.nibio.vips.model.Model;
@@ -47,8 +46,13 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
     private ModelUtil modelUtil;
     private ModelCalculations modelCalculations;
     private TimeZone timeZone;
-    private DataMatrix dataMatrix;
+    private DataMatrix dailyDataMatrix;
+    private DataMatrix hourlyDataMatrix;
     private Date startDateSporeMaturation;
+
+    // Thresholds for warning status
+    public final static Double MILLS_THRESHOLD_RED_WARNING = 100d;
+    public final static Double MILLS_THRESHOLD_YELLOW_WARNING = 90d;
 
     public MycosphaerellaRibisModel()
     {
@@ -59,11 +63,11 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
 
     @Override
     public List<Result> getResult() throws ModelExcecutionException {
-        if(this.dataMatrix == null)
+        if(this.dailyDataMatrix == null)
         {
             throw new ModelExcecutionException("ERROR: The model has not been initialized with input data. Aborting.");
         }
-        this.modelCalculations.calculateSporeMaturation(this.dataMatrix, timeZone, startDateSporeMaturation, MycosphaerellaRibisModel.MODEL_ID);
+        this.modelCalculations.calculateSporeMaturation(this.dailyDataMatrix, timeZone, startDateSporeMaturation);
         // TODO Calculate Mills table infections
         // TODO Create return value (list of results)
         // TODO Auto-generated method stub
@@ -82,10 +86,14 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             this.startDateSporeMaturation = format.parse(config.getConfigParameter("startDateSporeMaturation").toString());
             format.setTimeZone(timeZone);
-            this.dataMatrix = modelCalculations.initDataMatrix(
+            this.dailyDataMatrix = modelCalculations.initDataMatrix(
                 this.modelCalculations.validateAndInitializeWeatherData(
-                    this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations")),timeZone)
+                    this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations")),timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D)
                 );  
+            this.hourlyDataMatrix = modelCalculations.initDataMatrix(
+                this.modelCalculations.validateAndInitializeWeatherData(
+                    this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations")),timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1H)
+                ); 
         }
         catch(NullPointerException npe)
         {
