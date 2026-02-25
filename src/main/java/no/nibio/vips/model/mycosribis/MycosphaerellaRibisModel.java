@@ -21,19 +21,25 @@ package no.nibio.vips.model.mycosribis;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.Calendar;
 
 import no.nibio.vips.entity.ModelConfiguration;
 import no.nibio.vips.entity.Result;
+import no.nibio.vips.entity.ResultImpl;
 import no.nibio.vips.entity.WeatherObservation;
 import no.nibio.vips.i18n.I18nImpl;
 import no.nibio.vips.model.ConfigValidationException;
 import no.nibio.vips.model.Model;
 import no.nibio.vips.model.ModelExcecutionException;
 import no.nibio.vips.model.ModelId;
+import no.nibio.vips.util.CommonNamespaces;
 import no.nibio.vips.util.ModelUtil;
+import no.nibio.vips.util.WeatherObservationListException;
+import no.nibio.vips.util.WeatherUtil;
 
 
 /**
@@ -44,6 +50,7 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
 
     public final static ModelId MODEL_ID = new ModelId("MYCOSRIBIS");
     private ModelUtil modelUtil;
+    private WeatherUtil weatherUtil;
     private ModelCalculations modelCalculations;
     private TimeZone timeZone;
     private DataMatrix dailyDataMatrix;
@@ -58,20 +65,85 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
     {
         super("no.nibio.vips.model.mycosribis.texts");
         this.modelUtil = new ModelUtil();
+        this.weatherUtil = new WeatherUtil();
         this.modelCalculations = new ModelCalculations();
     }
 
     @Override
     public List<Result> getResult() throws ModelExcecutionException {
-        if(this.dailyDataMatrix == null)
+        if(this.hourlyDataMatrix == null || this.dailyDataMatrix == null)
         {
             throw new ModelExcecutionException("ERROR: The model has not been initialized with input data. Aborting.");
         }
-        this.modelCalculations.calculateSporeMaturation(this.dailyDataMatrix, timeZone, startDateSporeMaturation);
-        // TODO Calculate Mills table infections
-        // TODO Create return value (list of results)
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getResult'");
+        
+        try
+        {
+            // Calculate model background data
+            this.modelCalculations.calculateSporeMaturation(this.dailyDataMatrix, this.timeZone, this.startDateSporeMaturation);
+            this.hourlyDataMatrix = this.modelCalculations.accumulateMills(hourlyDataMatrix, dailyDataMatrix, startDateSporeMaturation, timeZone);
+
+            // Create results!
+            List<Result> results = new ArrayList<>();
+            Double ascosporeMaturity = 0d;
+            Double conidiaMaturity = 0d;
+            for(Date currentDate : this.hourlyDataMatrix.getSortedDateKeys())
+            {
+                if(currentDate.before(startDateSporeMaturation))
+                {
+                    continue;
+                }
+
+                
+                Result result = new ResultImpl();
+                result.setValidTimeStart(currentDate);
+
+                result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_LOW", MILLS_THRESHOLD_YELLOW_WARNING.toString());
+                result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_HIGH", MILLS_THRESHOLD_RED_WARNING.toString());
+
+                Date midnight = this.weatherUtil.normalizeToExactDate(currentDate, this.timeZone);
+                if(midnight.compareTo(currentDate) == 0)
+                {
+                    ascosporeMaturity = this.hourlyDataMatrix.getParamDoubleValueForDate(midnight, this.getModelId().toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+                    result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity != null ? String.valueOf(ascosporeMaturity) : "");
+                    conidiaMaturity = this.hourlyDataMatrix.getParamDoubleValueForDate(midnight, this.getModelId().toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA);
+                    result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity) : "");
+                }
+                
+                
+
+                // Determine the warning status based on accumulated Mills
+                Double accumulatedMills = this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, this.getModelId().toString() + "." + DataMatrix.ACCUMULATED_MILLS);
+                Integer warningStatus = null;
+                if(accumulatedMills == null || ascosporeMaturity == 100d)
+                {
+                    warningStatus = Result.WARNING_STATUS_NO_WARNING;
+                }
+                else 
+                {
+                    if(accumulatedMills >= MILLS_THRESHOLD_RED_WARNING)
+                    {
+                        warningStatus = Result.WARNING_STATUS_HIGH_RISK;
+                    }
+                    else if(accumulatedMills >= MILLS_THRESHOLD_YELLOW_WARNING)
+                    {
+                        warningStatus = Result.WARNING_STATUS_MINOR_RISK;
+                    }
+                    else
+                    {
+                        warningStatus = Result.WARNING_STATUS_NO_RISK;
+                    }
+                }
+                result.setWarningStatus(warningStatus);
+
+                results.add(result);
+            }
+            return results;
+        }
+        catch(WeatherObservationListException ex)
+        {
+            throw new ModelExcecutionException(ex.getMessage());
+        }
+
     }
 
     /**
