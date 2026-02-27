@@ -31,7 +31,6 @@ import java.util.stream.Collectors;
 
 import no.nibio.vips.entity.WeatherObservation;
 import no.nibio.vips.model.ConfigValidationException;
-import no.nibio.vips.model.ModelId;
 import no.nibio.vips.util.DateMap;
 import no.nibio.vips.util.InvalidAggregationTypeException;
 import no.nibio.vips.util.WeatherElements;
@@ -197,25 +196,24 @@ public class ModelCalculations {
        
 
         // Precipitation
-        List<WeatherObservation> RR = observations.stream().filter(obs->obs.getElementMeasurementTypeId().equals(WeatherElements.PRECIPITATION)).collect(Collectors.toList());
-        if(RR.isEmpty())
+        List<WeatherObservation> RRh = observations.stream().filter(obs->obs.getElementMeasurementTypeId().equals(WeatherElements.PRECIPITATION)).collect(Collectors.toList());
+        List<WeatherObservation> RRd;
+        if(RRh.isEmpty())
         {
             throw new ConfigValidationException("Precipitation observations must contain at least one valid item.");
         }
         // All values must be >= -0.1 mm
-        if(RR.stream().anyMatch(obs-> obs.getValue() < -0.01 || obs.getValue() > 500))
+        if(RRh.stream().anyMatch(obs-> obs.getValue() < -0.01 || obs.getValue() > 500))
         {
             throw new ConfigValidationException("Precipitation values cannot be negative or more than 500 mm");
         }
-        // If hourly: Must contain at least 15 hourly observations
-        if(RR.stream().anyMatch(obs -> obs.getLogIntervalId() == WeatherObservation.LOG_INTERVAL_ID_1H))
-        {
-            try {
-                RR = weatherUtil.getAggregatedDailyValues(RR, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_SUM);
-            } catch (WeatherObservationListException | InvalidAggregationTypeException e) {
-                throw new ConfigValidationException(e.getMessage());
-            }
+        // Must contain at least 15 hourly observations per day to aggregate
+        try {
+            RRd = weatherUtil.getAggregatedDailyValues(RRh, timeZone, 15, WeatherUtil.AGGREGATION_TYPE_SUM);
+        } catch (WeatherObservationListException | InvalidAggregationTypeException e) {
+            throw new ConfigValidationException(e.getMessage());
         }
+
 
         // Leaf Wetness        
         List<WeatherObservation> BTd = new ArrayList<>();
@@ -252,26 +250,27 @@ public class ModelCalculations {
         }
 
         // Check that the daily lists have equal length
-        if (!(TMd.size() == RR.size() && RR.size() == BTd.size())) {
+        if (!(TMd.size() == RRd.size() && RRd.size() == BTd.size())) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must have the same number of valid items.");
         }
         // Check that the lists start and end on the same date
-        if (!(TMd.get(0).getTimeMeasured().equals(RR.get(0).getTimeMeasured()) && RR.get(0).getTimeMeasured().equals(BTd.get(0).getTimeMeasured()))) {
+        if (!(TMd.get(0).getTimeMeasured().equals(RRd.get(0).getTimeMeasured()) && RRd.get(0).getTimeMeasured().equals(BTd.get(0).getTimeMeasured()))) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must start on the same date.");
         }
-        if (!(TMd.get(TMd.size() - 1).getTimeMeasured().equals(RR.get(RR.size() - 1).getTimeMeasured()) && RR.get(RR.size() - 1).getTimeMeasured().equals(BTd.get(BTd.size() - 1).getTimeMeasured()))) {
+        if (!(TMd.get(TMd.size() - 1).getTimeMeasured().equals(RRd.get(RRd.size() - 1).getTimeMeasured()) && RRd.get(RRd.size() - 1).getTimeMeasured().equals(BTd.get(BTd.size() - 1).getTimeMeasured()))) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must end on the same date.");
         }
         
         // Combine all validated daily observations into a single list
         List<WeatherObservation> validatedObservations = new ArrayList<>();
         validatedObservations.addAll(TMd);
-        validatedObservations.addAll(RR);
+        validatedObservations.addAll(RRd);
         validatedObservations.addAll(BTd);
         Map<Integer, List<WeatherObservation>> retVal = new HashMap<>();
         retVal.put(WeatherObservation.LOG_INTERVAL_ID_1D, validatedObservations);
         // Adding hourly observations for TM and BT for Mills table
         TMh.addAll(BTh);
+        TMh.addAll(RRh);
         retVal.put(WeatherObservation.LOG_INTERVAL_ID_1H, TMh);
         return retVal;
     }

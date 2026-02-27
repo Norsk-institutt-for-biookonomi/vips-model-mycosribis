@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
-import java.util.Calendar;
 
 import no.nibio.vips.entity.ModelConfiguration;
 import no.nibio.vips.entity.Result;
@@ -38,6 +37,7 @@ import no.nibio.vips.model.ModelExcecutionException;
 import no.nibio.vips.model.ModelId;
 import no.nibio.vips.util.CommonNamespaces;
 import no.nibio.vips.util.ModelUtil;
+import no.nibio.vips.util.WeatherElements;
 import no.nibio.vips.util.WeatherObservationListException;
 import no.nibio.vips.util.WeatherUtil;
 
@@ -104,6 +104,9 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 // Set model background values
                 Double accumulatedMills = this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_MILLS);
                 result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_MILLS, String.valueOf(accumulatedMills));
+                result.setValue(CommonNamespaces.NS_WEATHER, WeatherElements.TEMPERATURE_MEAN, String.valueOf(this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)));
+                result.setValue(CommonNamespaces.NS_WEATHER, WeatherElements.PRECIPITATION, String.valueOf(this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION)));
+                result.setValue(CommonNamespaces.NS_WEATHER, WeatherElements.LEAF_WETNESS_DURATION, String.valueOf(this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.LEAF_WETNESS_DURATION)));
 
                 Date midnight = this.weatherUtil.normalizeToExactDate(currentDate, this.timeZone);
                 if(midnight.compareTo(currentDate) == 0)

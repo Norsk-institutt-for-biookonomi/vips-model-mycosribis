@@ -25,9 +25,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
-import no.nibio.vips.entity.ModelConfiguration;
 import no.nibio.vips.entity.WeatherObservation;
-import no.nibio.vips.model.ConfigValidationException;
 import no.nibio.vips.model.ModelId;
 import no.nibio.vips.util.DateMap;
 import no.nibio.vips.util.WeatherElements;
