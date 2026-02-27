@@ -117,8 +117,9 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 
 
                 // Determine the warning status based on accumulated Mills
+                // We accumulate Mills only when ascospores are being spread
                 Integer warningStatus = null;
-                if(accumulatedMills == null || ascosporeMaturity == 100d)
+                if(accumulatedMills == null || ascosporeMaturity == 0d || ascosporeMaturity == 1d)
                 {
                     warningStatus = Result.WARNING_STATUS_NO_WARNING;
                 }
