@@ -116,13 +116,13 @@ public class ModelCalculationsTest {
         // Daily values must have been set for same period
         Date startTM = result.getFirstDateWithParameterValue("TM");
         Date startRR = result.getFirstDateWithParameterValue("RR");
-        Date startBT = result.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS);
+        Date startBT = result.getFirstDateWithParameterValue(DataMatrix.DAILY_LW_HOURS);
         assertEquals(startTM, startRR);
         assertEquals(startTM, startBT);
 
         Date endTM = result.getLastDateWithParameterValue("TM");
         Date endRR = result.getLastDateWithParameterValue("RR");
-        Date endBT = result.getLastDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS);
+        Date endBT = result.getLastDateWithParameterValue(DataMatrix.DAILY_LW_HOURS);
         assertEquals(endTM, endRR);
         assertEquals(endTM, endBT);
 
@@ -134,7 +134,7 @@ public class ModelCalculationsTest {
         {
             assertNotNull(result.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN));
             assertNotNull(result.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION));
-            assertNotNull(result.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS));
+            assertNotNull(result.getParamDoubleValueForDate(currentDate, DataMatrix.DAILY_LW_HOURS));
             cal.add(Calendar.DATE, 1);
             currentDate = cal.getTime();
         }
@@ -180,7 +180,7 @@ public class ModelCalculationsTest {
         }
 
         // BT
-        List<WeatherObservation> resultBT = wUtil.filterWeatherObservationsByParameter(result, MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS);
+        List<WeatherObservation> resultBT = wUtil.filterWeatherObservationsByParameter(result, DataMatrix.DAILY_LW_HOURS);
         List<WeatherObservation> expResultBT = TestDataFactory.buildDailyLeafWetness(new double[]{0,0,0,0,8,8,1,0,4,24}, TestDataFactory.dateOf(2019, 5, 1));
 
         Collections.sort(resultBT);
@@ -281,8 +281,8 @@ public class ModelCalculationsTest {
         Boolean failed = false;
         try {
             assertEquals(ddsum_c[0], dataMatrix.getParamDoubleValueForDate(
-                dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS)
-            , MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA),0.5);
+                dataMatrix.getFirstDateWithParameterValue(DataMatrix.CONSECUTIVE_DRY_DAYS)
+            , DataMatrix.DD_SUM_CONIDIA),0.5);
         }
         catch(AssertionFailedError afe)
         {
@@ -299,8 +299,8 @@ public class ModelCalculationsTest {
             instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime());
         
             assertEquals(ddsum_c[0], dataMatrix.getParamDoubleValueForDate(
-                dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS)
-            , MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA),0.5);
+                dataMatrix.getFirstDateWithParameterValue(DataMatrix.CONSECUTIVE_DRY_DAYS)
+            , DataMatrix.DD_SUM_CONIDIA),0.5);
         }
         catch(AssertionFailedError | NullPointerException ex)
         {
@@ -313,17 +313,17 @@ public class ModelCalculationsTest {
         cal.set(2018, Calendar.JUNE, 1, 0, 0, 0);
         cal.set(Calendar.MILLISECOND,0);
         instance.calculateSporeMaturation(dataMatrix, timeZone, cal.getTime());
-        Date startCDD = dataMatrix.getFirstDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS);
-        Date endCDD = dataMatrix.getLastDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS);
+        Date startCDD = dataMatrix.getFirstDateWithParameterValue(DataMatrix.CONSECUTIVE_DRY_DAYS);
+        Date endCDD = dataMatrix.getLastDateWithParameterValue(DataMatrix.CONSECUTIVE_DRY_DAYS);
         Date currentDate = startCDD;
         int index = 0;
         while(currentDate.compareTo(endCDD) <= 0)
         {
-            assertEquals(cdd[index], dataMatrix.getParamIntValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS));
-            assertEquals(ddsum_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA),0.5);
-            assertEquals(ddsum_a[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_ASCOSPORES),0.5);
-            assertEquals(r_d_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA),0.1);
-            assertEquals(r_d_a[index], dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES),0.1);
+            assertEquals(cdd[index], dataMatrix.getParamIntValueForDate(currentDate, DataMatrix.CONSECUTIVE_DRY_DAYS));
+            assertEquals(ddsum_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.DD_SUM_CONIDIA),0.5);
+            assertEquals(ddsum_a[index], dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.DD_SUM_ASCOSPORES),0.5);
+            assertEquals(r_d_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_CONIDIA),0.1);
+            assertEquals(r_d_a[index], dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_ASCOSPORES),0.1);
             cal.add(Calendar.DATE, 1);
             currentDate = cal.getTime();
             index++;
@@ -357,13 +357,13 @@ public class ModelCalculationsTest {
         DataMatrix result = instance.accumulateMills(hourlyData, dailyData, startDateSporeMaturation, timeZone);
         // Assume that we have at least one incident of yellow and one of red warning
         Date currentDate = startDateSporeMaturation;
-        Date endMills = hourlyData.getLastDateWithParameterValue(MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.ACCUMULATED_MILLS);
+        Date endMills = hourlyData.getLastDateWithParameterValue(DataMatrix.ACCUMULATED_MILLS);
         cal.setTime(currentDate);
         Boolean yellowWarningIssued = false;
         Boolean redWarningIssued = false;
         while(currentDate.compareTo(endMills) <= 0)
         {
-            Double accumulatedMills = result.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.ACCUMULATED_MILLS);
+            Double accumulatedMills = result.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_MILLS);
             if(accumulatedMills >= MycosphaerellaRibisModel.MILLS_THRESHOLD_YELLOW_WARNING && accumulatedMills < MycosphaerellaRibisModel.MILLS_THRESHOLD_RED_WARNING)
             {
                 yellowWarningIssued = true;

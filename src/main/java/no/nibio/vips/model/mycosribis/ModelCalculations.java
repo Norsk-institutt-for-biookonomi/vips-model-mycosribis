@@ -107,7 +107,7 @@ public class ModelCalculations {
         cal.setTime(currentDate);
         while(currentDate.compareTo(endDate) <= 0)
         {
-            if(this.isDryDay(dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION), dataMatrix.getParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS).longValue()))
+            if(this.isDryDay(dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION), dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.DAILY_LW_HOURS).longValue()))
             {
                 consecutiveDryDays++;
             }
@@ -115,16 +115,16 @@ public class ModelCalculations {
             {
                 consecutiveDryDays = 0;
             }
-            dataMatrix.setParamIntValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.CONSECUTIVE_DRY_DAYS, consecutiveDryDays);
+            dataMatrix.setParamIntValueForDate(currentDate, DataMatrix.CONSECUTIVE_DRY_DAYS, consecutiveDryDays);
 
             DDSumAscospores += consecutiveDryDays < thresholdConsecuticeDryDaysAscospores ? (dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)) : 0.0;
             DDSumConidia += consecutiveDryDays < thresholdConsecuticeDryDaysConidia ? (dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)) : 0.0;
 
-            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_ASCOSPORES, DDSumAscospores);
-            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.DD_SUM_CONIDIA, DDSumConidia);
+            dataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.DD_SUM_ASCOSPORES, DDSumAscospores);
+            dataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.DD_SUM_CONIDIA, DDSumConidia);
 
-            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES, this.getProportionMatureAscospores(DDSumAscospores));
-            dataMatrix.setParamDoubleValueForDate(currentDate, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA, this.getProportionMatureConidia(DDSumConidia));
+            dataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_ASCOSPORES, this.getProportionMatureAscospores(DDSumAscospores));
+            dataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_CONIDIA, this.getProportionMatureConidia(DDSumConidia));
 
             cal.add(Calendar.DATE, 1);
             currentDate = cal.getTime();
@@ -241,7 +241,7 @@ public class ModelCalculations {
                 WeatherObservation dailyLWObservation = new WeatherObservation();
                 dailyLWObservation.setTimeMeasured(day);
                 dailyLWObservation.setLogIntervalId(WeatherObservation.LOG_INTERVAL_ID_1D);
-                dailyLWObservation.setElementMeasurementTypeId(MycosphaerellaRibisModel.MODEL_ID + "." + DataMatrix.DAILY_LW_HOURS);
+                dailyLWObservation.setElementMeasurementTypeId(DataMatrix.DAILY_LW_HOURS);
                 dailyLWObservation.setValue(dailyLWHours.doubleValue());
                 BTd.add(dailyLWObservation);
             }
@@ -300,8 +300,8 @@ public class ModelCalculations {
             // We update and store the ascospore maturity only at midnight, when we have an updated accumulated temperature
             if(currentTimeStamp.equals(weatherUtil.normalizeToExactDate(currentTimeStamp, timeZone)))
             {
-                ascosporeMaturity = dailyData.getParamDoubleValueForDate(currentTimeStamp, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES);
-                hourlyData.setParamDoubleValueForDate(currentTimeStamp, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity);
+                ascosporeMaturity = dailyData.getParamDoubleValueForDate(currentTimeStamp, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+                hourlyData.setParamDoubleValueForDate(currentTimeStamp, DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity);
             }
 
 
@@ -326,7 +326,7 @@ public class ModelCalculations {
                 }
             }
 
-            hourlyData.setParamDoubleValueForDate(currentTimeStamp, MycosphaerellaRibisModel.MODEL_ID.toString() + "." + DataMatrix.ACCUMULATED_MILLS, accumulatedMills);
+            hourlyData.setParamDoubleValueForDate(currentTimeStamp, DataMatrix.ACCUMULATED_MILLS, accumulatedMills);
             
             cal.add(Calendar.HOUR, 1);
             currentTimeStamp = cal.getTime();
