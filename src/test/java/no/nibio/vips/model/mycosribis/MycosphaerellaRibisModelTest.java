@@ -19,6 +19,7 @@
 package no.nibio.vips.model.mycosribis;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -73,12 +74,26 @@ public class MycosphaerellaRibisModelTest {
         config.setConfigParameter("startDateSporeMaturation", "2018-06-01");
         MycosphaerellaRibisModel instance = new MycosphaerellaRibisModel();
         instance.setConfiguration(config);
-
-        List<Result> expResult = null;
-        List<Result> result = instance.getResult();
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        List<Result> results = instance.getResult();
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Oslo"));
+        cal.set(2018, Calendar.JUNE, 11, 5, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        Date yellowTime = cal.getTime();
+        cal.set(Calendar.HOUR_OF_DAY,17);
+        Date redTime = cal.getTime();
+        for(Result result:results)
+        {
+            if(result.getValidTimeStart().compareTo(yellowTime) == 0)
+            {
+                assertEquals(98, Double.valueOf(result.getValue(MycosphaerellaRibisModel.MODEL_ID.toString(), DataMatrix.ACCUMULATED_MILLS)).intValue());
+                assertEquals(3, result.getWarningStatus());
+            }
+            if(result.getValidTimeStart().compareTo(redTime) == 0)
+            {
+                assertEquals(198, Double.valueOf(result.getValue(MycosphaerellaRibisModel.MODEL_ID.toString(), DataMatrix.ACCUMULATED_MILLS)).intValue());
+                assertEquals(4, result.getWarningStatus());
+            }
+        }
     }
 
     /**

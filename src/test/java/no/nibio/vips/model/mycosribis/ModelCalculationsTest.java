@@ -379,8 +379,6 @@ public class ModelCalculationsTest {
         //System.out.println(result.toCSV());
         assumeTrue(yellowWarningIssued);
         assumeTrue(redWarningIssued);
-        
-        //assertEquals(expResult, result);
     }
     
 }

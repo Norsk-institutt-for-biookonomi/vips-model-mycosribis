@@ -97,22 +97,26 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 Result result = new ResultImpl();
                 result.setValidTimeStart(currentDate);
 
+                // Set infection threshold values - to help display it in charts
                 result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_LOW", MILLS_THRESHOLD_YELLOW_WARNING.toString());
                 result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_HIGH", MILLS_THRESHOLD_RED_WARNING.toString());
+
+                // Set model background values
+                Double accumulatedMills = this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_MILLS);
+                result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_MILLS, String.valueOf(accumulatedMills));
 
                 Date midnight = this.weatherUtil.normalizeToExactDate(currentDate, this.timeZone);
                 if(midnight.compareTo(currentDate) == 0)
                 {
-                    ascosporeMaturity = this.hourlyDataMatrix.getParamDoubleValueForDate(midnight, this.getModelId().toString() + "." + DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+                    ascosporeMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity != null ? String.valueOf(ascosporeMaturity) : "");
-                    conidiaMaturity = this.hourlyDataMatrix.getParamDoubleValueForDate(midnight, this.getModelId().toString() + "." + DataMatrix.PROPORTION_MATURE_CONIDIA);
+                    conidiaMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_CONIDIA);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity) : "");
                 }
                 
                 
 
                 // Determine the warning status based on accumulated Mills
-                Double accumulatedMills = this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, this.getModelId().toString() + "." + DataMatrix.ACCUMULATED_MILLS);
                 Integer warningStatus = null;
                 if(accumulatedMills == null || ascosporeMaturity == 100d)
                 {
