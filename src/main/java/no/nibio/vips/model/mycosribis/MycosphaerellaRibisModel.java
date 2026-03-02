@@ -164,8 +164,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
             // Required parameters: timeZone, startDateSporeMaturation and observations
             this.timeZone = TimeZone.getTimeZone((String) config.getConfigParameter("timeZone"));
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            this.startDateSporeMaturation = format.parse(config.getConfigParameter("startDateSporeMaturation").toString());
             format.setTimeZone(timeZone);
+            this.startDateSporeMaturation = format.parse(config.getConfigParameter("startDateSporeMaturation").toString());
             this.dailyDataMatrix = modelCalculations.initDataMatrix(
                 this.modelCalculations.validateAndInitializeWeatherData(
                     this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations")),timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D)
