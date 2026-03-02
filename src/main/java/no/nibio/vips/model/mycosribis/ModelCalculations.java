@@ -107,8 +107,6 @@ public class ModelCalculations {
         System.out.println(dataMatrix.toCSV());
         while(currentDate.compareTo(endDate) <= 0)
         {
-            System.out.println("currentDate=" + currentDate);
-            System.out.println("Getting " + DataMatrix.DAILY_LW_HOURS);
             if(this.isDryDay(dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION), dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.DAILY_LW_HOURS).longValue()))
             {
                 consecutiveDryDays++;
