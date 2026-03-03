@@ -26,7 +26,7 @@ measures to reduce primary inoculum and predict spore release patterns for Mycos
 
 ## Development
 
-Clone Gitlab repository
+Clone Gitlab repository:
 
 ```
 $ git clone https://gitlab.nibio.no/VIPS/models/java/Model_MYCOSRIBIS.git
