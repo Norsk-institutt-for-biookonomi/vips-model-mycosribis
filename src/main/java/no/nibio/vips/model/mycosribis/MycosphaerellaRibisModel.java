@@ -22,6 +22,7 @@ package no.nibio.vips.model.mycosribis;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -112,9 +113,9 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 if(midnight.compareTo(currentDate) == 0)
                 {
                     ascosporeMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
-                    result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity != null ? String.valueOf(ascosporeMaturity) : "");
+                    result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity != null ? String.valueOf(ascosporeMaturity * 100) : "");
                     conidiaMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_CONIDIA);
-                    result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity) : "");
+                    result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity * 100) : "");
                 }
                 
                 
@@ -166,13 +167,15 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             format.setTimeZone(timeZone);
             this.startDateSporeMaturation = format.parse(config.getConfigParameter("startDateSporeMaturation").toString());
+            List<WeatherObservation> observations = this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations"));
+            Collections.sort(observations);
             this.dailyDataMatrix = modelCalculations.initDataMatrix(
                 this.modelCalculations.validateAndInitializeWeatherData(
-                    this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations")),timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D)
+                    observations,timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1D)
                 );  
             this.hourlyDataMatrix = modelCalculations.initDataMatrix(
                 this.modelCalculations.validateAndInitializeWeatherData(
-                    this.modelUtil.extractWeatherObservationList(config.getConfigParameter("observations")),timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1H)
+                    observations,timeZone).get(WeatherObservation.LOG_INTERVAL_ID_1H)
                 ); 
         }
         catch(NullPointerException npe)
