@@ -104,7 +104,7 @@ public class ModelCalculations {
         Date currentDate = startDateSporeMaturation;
         Calendar cal = Calendar.getInstance(timeZone);
         cal.setTime(currentDate);
-        System.out.println(dataMatrix.toCSV());
+        //System.out.println(dataMatrix.toCSV());
         while(currentDate.compareTo(endDate) <= 0)
         {
             if(this.isDryDay(dataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION), dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.DAILY_LW_HOURS).longValue()))
@@ -256,7 +256,7 @@ public class ModelCalculations {
         }
         // Check that the lists start and end on the same date
         if (!(TMd.get(0).getTimeMeasured().equals(RRd.get(0).getTimeMeasured()) && RRd.get(0).getTimeMeasured().equals(BTd.get(0).getTimeMeasured()))) {
-            throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must start on the same date.");
+            throw new ConfigValidationException("Temperature (" + TMd.get(0).getTimeMeasured() + "), precipitation(" + RRd.get(0).getTimeMeasured() + "), and leaf wetness (" + BTd.get(0).getTimeMeasured() + ") observations must start on the same date.");
         }
         if (!(TMd.get(TMd.size() - 1).getTimeMeasured().equals(RRd.get(RRd.size() - 1).getTimeMeasured()) && RRd.get(RRd.size() - 1).getTimeMeasured().equals(BTd.get(BTd.size() - 1).getTimeMeasured()))) {
             throw new ConfigValidationException("Temperature, precipitation, and leaf wetness observations must end on the same date.");
