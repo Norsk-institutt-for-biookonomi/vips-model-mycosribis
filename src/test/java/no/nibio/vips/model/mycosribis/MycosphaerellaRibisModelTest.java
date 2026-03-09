@@ -80,17 +80,23 @@ public class MycosphaerellaRibisModelTest {
         Date yellowTime = cal.getTime();
         cal.set(Calendar.HOUR_OF_DAY,17);
         Date redTime = cal.getTime();
+        cal.set(2018, Calendar.JULY, 15,0,0,0);
+        Date grayTime = cal.getTime();
         for(Result result:results)
         {
             if(result.getValidTimeStart().compareTo(yellowTime) == 0)
             {
-                assertEquals(98, Double.valueOf(result.getValue(MycosphaerellaRibisModel.MODEL_ID.toString(), DataMatrix.ACCUMULATED_MILLS)).intValue());
+                assertEquals(98, Double.valueOf(result.getValue(MycosphaerellaRibisModel.MODEL_ID.toString(), DataMatrix.ACCUMULATED_RISK)).intValue());
                 assertEquals(3, result.getWarningStatus());
             }
             if(result.getValidTimeStart().compareTo(redTime) == 0)
             {
-                assertEquals(198, Double.valueOf(result.getValue(MycosphaerellaRibisModel.MODEL_ID.toString(), DataMatrix.ACCUMULATED_MILLS)).intValue());
+                assertEquals(198, Double.valueOf(result.getValue(MycosphaerellaRibisModel.MODEL_ID.toString(), DataMatrix.ACCUMULATED_RISK)).intValue());
                 assertEquals(4, result.getWarningStatus());
+            }
+            if(result.getValidTimeStart().compareTo(grayTime) == 0)
+            {
+                assertEquals(0, result.getWarningStatus());
             }
         }
     }

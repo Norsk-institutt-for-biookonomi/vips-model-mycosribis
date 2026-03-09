@@ -44,7 +44,7 @@ import no.nibio.vips.util.WeatherUtil;
 
 
 /**
- *
+ * Model for the fungal disease Mycosphaerella ribis (no: Bærbuskbladflekk) in blackberries (no: solbær)
  * @author Tor-Einar Skog <tor-einar.skog@nibio.no>
  */
 public class MycosphaerellaRibisModel extends I18nImpl implements Model {
@@ -59,8 +59,11 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
     private Date startDateSporeMaturation;
 
     // Thresholds for warning status
-    public final static Double MILLS_THRESHOLD_RED_WARNING = 100d;
-    public final static Double MILLS_THRESHOLD_YELLOW_WARNING = 90d;
+    public final static Double RISK_THRESHOLD_RED_WARNING = 100d;
+    public final static Double RISK_THRESHOLD_YELLOW_WARNING = 90d;
+
+    // Threshold for when warning status turns grey (warning ended)
+    public final static Double ASCOSPORE_MATURATION_THRESHOLD = 0.99;
 
     public MycosphaerellaRibisModel()
     {
@@ -99,12 +102,12 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 result.setValidTimeStart(currentDate);
 
                 // Set infection threshold values - to help display it in charts
-                result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_LOW", MILLS_THRESHOLD_YELLOW_WARNING.toString());
-                result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_HIGH", MILLS_THRESHOLD_RED_WARNING.toString());
+                result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_LOW", RISK_THRESHOLD_YELLOW_WARNING.toString());
+                result.setValue(CommonNamespaces.NS_FORECAST, "THRESHOLD_HIGH", RISK_THRESHOLD_RED_WARNING.toString());
 
                 // Set model background values
-                Double accumulatedMills = this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_MILLS);
-                result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_MILLS, String.valueOf(accumulatedMills));
+                Double accumulatedMills = this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_RISK);
+                result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_RISK, String.valueOf(accumulatedMills));
                 result.setValue(CommonNamespaces.NS_WEATHER, WeatherElements.TEMPERATURE_MEAN, String.valueOf(this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.TEMPERATURE_MEAN)));
                 result.setValue(CommonNamespaces.NS_WEATHER, WeatherElements.PRECIPITATION, String.valueOf(this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION)));
                 result.setValue(CommonNamespaces.NS_WEATHER, WeatherElements.LEAF_WETNESS_DURATION, String.valueOf(this.hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.LEAF_WETNESS_DURATION)));
@@ -123,17 +126,17 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 // Determine the warning status based on accumulated Mills
                 // We accumulate Mills only when ascospores are being spread
                 Integer warningStatus = null;
-                if(accumulatedMills == null || ascosporeMaturity == 0d || ascosporeMaturity == 1d)
+                if(accumulatedMills == null || ascosporeMaturity == 0d || ascosporeMaturity >= ASCOSPORE_MATURATION_THRESHOLD)
                 {
                     warningStatus = Result.WARNING_STATUS_NO_WARNING;
                 }
                 else 
                 {
-                    if(accumulatedMills >= MILLS_THRESHOLD_RED_WARNING)
+                    if(accumulatedMills >= RISK_THRESHOLD_RED_WARNING)
                     {
                         warningStatus = Result.WARNING_STATUS_HIGH_RISK;
                     }
-                    else if(accumulatedMills >= MILLS_THRESHOLD_YELLOW_WARNING)
+                    else if(accumulatedMills >= RISK_THRESHOLD_YELLOW_WARNING)
                     {
                         warningStatus = Result.WARNING_STATUS_MINOR_RISK;
                     }

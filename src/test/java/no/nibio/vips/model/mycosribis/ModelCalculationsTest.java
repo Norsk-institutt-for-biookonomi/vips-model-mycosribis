@@ -315,7 +315,7 @@ public class ModelCalculationsTest {
         Date endCDD = dataMatrix.getLastDateWithParameterValue(DataMatrix.CONSECUTIVE_DRY_DAYS);
         Date currentDate = startCDD;
         int index = 0;
-        while(currentDate.compareTo(endCDD) <= 0)
+        while(currentDate.compareTo(endCDD) <= 0 && index < cdd.length)
         {
             assertEquals(cdd[index], dataMatrix.getParamIntValueForDate(currentDate, DataMatrix.CONSECUTIVE_DRY_DAYS));
             assertEquals(ddsum_c[index], dataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.DD_SUM_CONIDIA),0.5);
@@ -350,25 +350,31 @@ public class ModelCalculationsTest {
         cal.set(Calendar.MILLISECOND,0);
         Date startDateSporeMaturation = cal.getTime();
         
-        DataMatrix expResult = null;
         instance.calculateSporeMaturation(dailyData, timeZone, startDateSporeMaturation);
         DataMatrix result = instance.accumulateMills(hourlyData, dailyData, startDateSporeMaturation, timeZone);
         // Assume that we have at least one incident of yellow and one of red warning
         Date currentDate = startDateSporeMaturation;
-        Date endMills = hourlyData.getLastDateWithParameterValue(DataMatrix.ACCUMULATED_MILLS);
+        Date endMills = hourlyData.getLastDateWithParameterValue(DataMatrix.ACCUMULATED_RISK);
         cal.setTime(currentDate);
         Boolean yellowWarningIssued = false;
         Boolean redWarningIssued = false;
+        Boolean grayWarningIssued = false;
         while(currentDate.compareTo(endMills) <= 0)
         {
-            Double accumulatedMills = result.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_MILLS);
-            if(accumulatedMills >= MycosphaerellaRibisModel.MILLS_THRESHOLD_YELLOW_WARNING && accumulatedMills < MycosphaerellaRibisModel.MILLS_THRESHOLD_RED_WARNING)
+            Double accumulatedRisk = result.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_RISK);
+            Double ascosporeMaturation = result.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+            ascosporeMaturation = ascosporeMaturation == null ? 0d : ascosporeMaturation;
+            if(accumulatedRisk >= MycosphaerellaRibisModel.RISK_THRESHOLD_YELLOW_WARNING && accumulatedRisk < MycosphaerellaRibisModel.RISK_THRESHOLD_RED_WARNING)
             {
                 yellowWarningIssued = true;
             }
-            else if(accumulatedMills >= MycosphaerellaRibisModel.MILLS_THRESHOLD_RED_WARNING)
+            else if(accumulatedRisk >= MycosphaerellaRibisModel.RISK_THRESHOLD_RED_WARNING && ascosporeMaturation < MycosphaerellaRibisModel.ASCOSPORE_MATURATION_THRESHOLD)
             {
                 redWarningIssued = true;
+            }
+            else if(accumulatedRisk >= MycosphaerellaRibisModel.RISK_THRESHOLD_RED_WARNING && ascosporeMaturation >= MycosphaerellaRibisModel.ASCOSPORE_MATURATION_THRESHOLD)
+            {
+                grayWarningIssued = true;
             }
             cal.add(Calendar.HOUR, 1);
             currentDate = cal.getTime();
@@ -377,6 +383,7 @@ public class ModelCalculationsTest {
         //System.out.println(result.toCSV());
         assumeTrue(yellowWarningIssued);
         assumeTrue(redWarningIssued);
+        assumeTrue(grayWarningIssued);
     }
     
 }
