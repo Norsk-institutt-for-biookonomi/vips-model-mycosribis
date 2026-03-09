@@ -326,7 +326,7 @@ public class ModelCalculations {
                 }
             }
 
-            hourlyData.setParamDoubleValueForDate(currentTimeStamp, DataMatrix.ACCUMULATED_MILLS, accumulatedMills);
+            hourlyData.setParamDoubleValueForDate(currentTimeStamp, DataMatrix.ACCUMULATED_RISK, accumulatedMills);
             
             cal.add(Calendar.HOUR, 1);
             currentTimeStamp = cal.getTime();
