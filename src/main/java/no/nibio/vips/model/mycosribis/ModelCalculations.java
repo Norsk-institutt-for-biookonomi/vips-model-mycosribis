@@ -24,6 +24,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
@@ -127,6 +128,85 @@ public class ModelCalculations {
             dataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_CONIDIA, this.getProportionMatureConidia(DDSumConidia));
 
             cal.add(Calendar.DATE, 1);
+            currentDate = cal.getTime();
+        }
+    }
+
+   /**
+    * A spore casting event is a period of > 2-3 hours with > 2-3 mm of accumulated rain, according to Dr. Arne Stensvand
+    * After such an event, all cast spores are no longer 
+    * @param hourlyDataMatrix
+    * @param timeZone
+    * @param startDateSporeMaturation
+    */
+    public void calculateSporeCastingEvents(DateMap hourlyDataMatrix, TimeZone timeZone, Date startDateSporeMaturation)
+    {
+        Date endDate = hourlyDataMatrix.getLastDateWithValues();
+        Date currentDate = startDateSporeMaturation;
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.setTime(currentDate);
+
+        LinkedList<Double> lastThreeHoursOfRain = new LinkedList<>();
+        while(currentDate.compareTo(endDate) <= 0)
+        {
+            Double hourlyRain = hourlyDataMatrix.getParamDoubleValueForDate(currentDate, WeatherElements.PRECIPITATION);
+            lastThreeHoursOfRain.add(hourlyRain);
+            if(lastThreeHoursOfRain.size() > 3)
+            {
+                lastThreeHoursOfRain.removeFirst();
+            }
+            Double accumulatedRainLast3Hours = lastThreeHoursOfRain.stream().mapToDouble(Double::doubleValue).sum();
+            hourlyDataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_RAIN_LAST_3_HOURS, accumulatedRainLast3Hours);
+            hourlyDataMatrix.setParamStringValueForDate(currentDate, DataMatrix.IS_SPORE_CASTING_EVENT, 
+                (lastThreeHoursOfRain.stream().filter(val -> val > 0).count() >= 2 && accumulatedRainLast3Hours >= 2) // The definition of a spore casting event
+                 ? Boolean.TRUE.toString() : Boolean.FALSE.toString());
+            cal.add(Calendar.HOUR, 1);
+            currentDate = cal.getTime();
+        }
+
+    }
+
+    /**
+     * Uses 
+     * @param hourlyDataMatrix
+     * @param dailyDataMatrix
+     * @param timeZone
+     * @param startDateSporeMaturation
+     */
+    public void calculateAccumulatedSpores(DateMap hourlyDataMatrix, DateMap dailyDataMatrix, TimeZone timeZone, Date startDateSporeMaturation)
+    {
+        Date endDate = hourlyDataMatrix.getLastDateWithValues();
+        Date currentDate = startDateSporeMaturation;
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.setTime(currentDate);
+        Double accumulatedSporesFraction = 0d;
+        Double previousSporeMaturationFraction = 0d;
+        Boolean isSporeCastingEvent = false;
+        while(currentDate.compareTo(endDate) <= 0)
+        {
+            // This has to last until the next midnight
+            if(hourlyDataMatrix.getParamStringValueForDate(currentDate, DataMatrix.IS_SPORE_CASTING_EVENT).equals(Boolean.TRUE.toString()))
+            {
+                    isSporeCastingEvent = true;
+            }
+            // If we have a spore casting event (a period of > 2-3 hours with > 2-3 mm of accumulated rain, according to Dr. Arne Stensvand)    ,
+            // the accumulated available spores are used up
+            if(isSporeCastingEvent) 
+            {
+                accumulatedSporesFraction = 0d;
+            }
+            // Updating the daily data (available ascospores)
+            Double currentSporeMaturationFraction = dailyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+            if(currentSporeMaturationFraction != null)
+            {
+                accumulatedSporesFraction += currentSporeMaturationFraction - previousSporeMaturationFraction;
+                dailyDataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_ASCOSPORES, accumulatedSporesFraction);
+                // Reset the value for the new day
+                isSporeCastingEvent = false;
+                previousSporeMaturationFraction = currentSporeMaturationFraction;
+            } 
+            
+            cal.add(Calendar.HOUR, 1);
             currentDate = cal.getTime();
         }
     }
@@ -285,7 +365,8 @@ public class ModelCalculations {
     public DataMatrix accumulateMills(DataMatrix hourlyData, DataMatrix dailyData, Date startDateSporeMaturation, TimeZone timeZone) throws WeatherObservationListException
     {
         WeatherUtil weatherUtil = new WeatherUtil();
-        Double accumulatedMills = 0d;
+        Double accumulatedRisk = 0d;
+        Integer riskDurationHours = 0;
         Double ascosporeMaturity = 0d;
         // We have already calculated this
         //AscosporeMaturityTable ascosporeMaturityTable = new AscosporeMaturityTable();
@@ -313,7 +394,20 @@ public class ModelCalculations {
                 // If dry for long enough, reset accumulated Mills
                 if(hoursSinceLeafWetness >= MAX_LEAF_DRYING_TIME)
                 {
-                    accumulatedMills = 0d;
+                    accumulatedRisk = 0d;
+                    // Set the accumulated risk duration hours for all the hours of the risk period
+                    cal.setTime(currentTimeStamp);
+                    cal.add(Calendar.HOUR, -riskDurationHours);
+                    Date riskTimeStamp = cal.getTime();
+                    while(riskTimeStamp.before(currentTimeStamp))
+                    {
+                        hourlyData.setParamIntValueForDate(riskTimeStamp, DataMatrix.RISK_PERIOD_DURATION_HOURS, riskDurationHours);
+                        cal.setTime(riskTimeStamp);
+                        cal.add(Calendar.HOUR, 1);
+                        riskTimeStamp = cal.getTime();
+                    }
+                    // Reset duration counter
+                    riskDurationHours = 0;
                 }
             }
             else
@@ -322,12 +416,18 @@ public class ModelCalculations {
                 Double currentTemperature = hourlyData.getParamDoubleValueForDate(currentTimeStamp, WeatherElements.TEMPERATURE_MEAN);
                 if(currentTemperature != null)
                 {
-                    accumulatedMills += millsTable.getMillsValue(currentTemperature, 1);
+                    accumulatedRisk += millsTable.getMillsValue(currentTemperature, 1);
                 }
             }
 
-            hourlyData.setParamDoubleValueForDate(currentTimeStamp, DataMatrix.ACCUMULATED_RISK, accumulatedMills);
+            if(accumulatedRisk > 0)
+            {
+                riskDurationHours++;
+            }
+
+            hourlyData.setParamDoubleValueForDate(currentTimeStamp, DataMatrix.ACCUMULATED_RISK, accumulatedRisk);
             
+            cal.setTime(currentTimeStamp);
             cal.add(Calendar.HOUR, 1);
             currentTimeStamp = cal.getTime();
         }

@@ -61,6 +61,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
     // Thresholds for warning status
     public final static Double RISK_THRESHOLD_RED_WARNING = 100d;
     public final static Double RISK_THRESHOLD_YELLOW_WARNING = 90d;
+    public final static Double RISK_THRESHOLD_AVAILABLE_ASCOSPORES = 0.03;
+    public final static Integer RISK_THRESHOLD_DURATION = 6;
 
     // Threshold for when warning status turns grey (warning ended)
     public final static Double ASCOSPORE_MATURATION_THRESHOLD = 0.99;
@@ -85,10 +87,16 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
             // Calculate model background data
             this.modelCalculations.calculateSporeMaturation(this.dailyDataMatrix, this.timeZone, this.startDateSporeMaturation);
             this.hourlyDataMatrix = this.modelCalculations.accumulateMills(hourlyDataMatrix, dailyDataMatrix, startDateSporeMaturation, timeZone);
+            this.modelCalculations.calculateSporeCastingEvents(hourlyDataMatrix, timeZone, startDateSporeMaturation);
+            this.modelCalculations.calculateAccumulatedSpores(hourlyDataMatrix, dailyDataMatrix, timeZone, startDateSporeMaturation);
+
+            System.out.println(hourlyDataMatrix.toCSV());
+            System.out.println(dailyDataMatrix.toCSV());
 
             // Create results!
             List<Result> results = new ArrayList<>();
             Double ascosporeMaturity = 0d;
+            Double accumulatedAscospores = 0d;
             Double conidiaMaturity = 0d;
             for(Date currentDate : this.hourlyDataMatrix.getSortedDateKeys())
             {
@@ -117,6 +125,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 {
                     ascosporeMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity != null ? String.valueOf(ascosporeMaturity * 100) : "");
+                    accumulatedAscospores = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.ACCUMULATED_ASCOSPORES);
+                    result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_ASCOSPORES, accumulatedAscospores != null ? String.valueOf(accumulatedAscospores * 100) : "");
                     conidiaMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_CONIDIA);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity * 100) : "");
                 }
@@ -132,7 +142,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 }
                 else 
                 {
-                    if(accumulatedMills >= RISK_THRESHOLD_RED_WARNING)
+                    Integer riskDurationHours = hourlyDataMatrix.getParamIntValueForDate(currentDate, DataMatrix.RISK_PERIOD_DURATION_HOURS);
+                    if(accumulatedMills >= RISK_THRESHOLD_RED_WARNING && accumulatedAscospores != null && accumulatedAscospores >= RISK_THRESHOLD_AVAILABLE_ASCOSPORES && riskDurationHours != null && riskDurationHours >= RISK_THRESHOLD_DURATION)
                     {
                         warningStatus = Result.WARNING_STATUS_HIGH_RISK;
                     }
