@@ -356,9 +356,9 @@ public class ModelCalculationsTest {
         Date currentDate = startDateSporeMaturation;
         Date endMills = hourlyData.getLastDateWithParameterValue(DataMatrix.ACCUMULATED_RISK);
         cal.setTime(currentDate);
-        Boolean yellowWarningIssued = false;
-        Boolean redWarningIssued = false;
-        Boolean grayWarningIssued = false;
+        Boolean yellowThresholdPassed = false;
+        Boolean redThresholdPassed = false;
+        Boolean ascosporeMaturationPracicallyOver = false;
         while(currentDate.compareTo(endMills) <= 0)
         {
             Double accumulatedRisk = result.getParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_RISK);
@@ -366,24 +366,79 @@ public class ModelCalculationsTest {
             ascosporeMaturation = ascosporeMaturation == null ? 0d : ascosporeMaturation;
             if(accumulatedRisk >= MycosphaerellaRibisModel.RISK_THRESHOLD_YELLOW_WARNING && accumulatedRisk < MycosphaerellaRibisModel.RISK_THRESHOLD_RED_WARNING)
             {
-                yellowWarningIssued = true;
+                yellowThresholdPassed = true;
             }
             else if(accumulatedRisk >= MycosphaerellaRibisModel.RISK_THRESHOLD_RED_WARNING && ascosporeMaturation < MycosphaerellaRibisModel.ASCOSPORE_MATURATION_THRESHOLD)
             {
-                redWarningIssued = true;
+                redThresholdPassed = true;
             }
             else if(accumulatedRisk >= MycosphaerellaRibisModel.RISK_THRESHOLD_RED_WARNING && ascosporeMaturation >= MycosphaerellaRibisModel.ASCOSPORE_MATURATION_THRESHOLD)
             {
-                grayWarningIssued = true;
+                ascosporeMaturationPracicallyOver = true;
             }
             cal.add(Calendar.HOUR, 1);
             currentDate = cal.getTime();
         }
 
         //System.out.println(result.toCSV());
-        assumeTrue(yellowWarningIssued);
-        assumeTrue(redWarningIssued);
-        assumeTrue(grayWarningIssued);
+        assumeTrue(yellowThresholdPassed);
+        assumeTrue(redThresholdPassed);
+        assumeTrue(ascosporeMaturationPracicallyOver);
+    }
+
+    /**
+     * Test of calculateSporeCastingEvents method, of class ModelCalculations.
+     */
+    @Test
+    public void testCalculateSporeCastingEvents() throws Exception{
+        System.out.println("calculateSporeCastingEvents");
+        TimeZone timeZone = TimeZone.getTimeZone("Europe/Oslo");
+        ModelCalculations instance = new ModelCalculations();
+        Map<Integer,List<WeatherObservation>> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"), timeZone);
+
+        //allObservations.forEach(o->System.out.println(o.toString()));
+        DataMatrix dailyData = instance.initDataMatrix(allObservations.get(WeatherObservation.LOG_INTERVAL_ID_1D));
+        DataMatrix hourlyData = instance.initDataMatrix(allObservations.get(WeatherObservation.LOG_INTERVAL_ID_1H));
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.set(2018, Calendar.JUNE, 1, 0, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        Date startDateSporeMaturation = cal.getTime();
+        
+        instance.calculateSporeMaturation(dailyData, timeZone, startDateSporeMaturation);
+        instance.calculateSporeCastingEvents(hourlyData, timeZone, startDateSporeMaturation);
+
+        cal.set(2018, Calendar.JUNE, 10, 16, 0, 0);
+        assumeTrue(hourlyData.getParamStringValueForDate(cal.getTime(), DataMatrix.IS_SPORE_CASTING_EVENT).equals(Boolean.TRUE.toString()));
+
+        cal.set(2018, Calendar.JUNE, 22, 16, 0, 0);
+        assumeTrue(hourlyData.getParamStringValueForDate(cal.getTime(), DataMatrix.IS_SPORE_CASTING_EVENT).equals(Boolean.FALSE.toString()));
+    }
+
+    /**
+     * Test of calculateAccumulatedSpores method, of class ModelCalculations.
+     */
+    @Test
+    public void testCalculateAccumulatedSpores() throws Exception {
+        System.out.println("calculateAccumulatedSpores");
+        TimeZone timeZone = TimeZone.getTimeZone("Europe/Oslo");
+        ModelCalculations instance = new ModelCalculations();
+        Map<Integer,List<WeatherObservation>> allObservations = instance.validateAndInitializeWeatherData(new WeatherDataFileReader().getWeatherObservationsFromFile("/hourly_all_dry.json"), timeZone);
+        DataMatrix dailyData = instance.initDataMatrix(allObservations.get(WeatherObservation.LOG_INTERVAL_ID_1D));
+        DataMatrix hourlyData = instance.initDataMatrix(allObservations.get(WeatherObservation.LOG_INTERVAL_ID_1H));
+        Calendar cal = Calendar.getInstance(timeZone);
+        cal.set(2018, Calendar.JUNE, 1, 0, 0, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        Date startDateSporeMaturation = cal.getTime();
+        
+        instance.calculateSporeMaturation(dailyData, timeZone, startDateSporeMaturation);
+        instance.calculateSporeCastingEvents(hourlyData, timeZone, startDateSporeMaturation);
+        instance.calculateAccumulatedSpores(hourlyData, dailyData, timeZone, startDateSporeMaturation);
+        
+        cal.set(2018, Calendar.JULY, 8, 0, 0, 0);
+        assertEquals(0.1175, dailyData.getParamDoubleValueForDate(cal.getTime(), DataMatrix.ACCUMULATED_ASCOSPORES), 0.001);
+        cal.add(Calendar.DATE, 1);
+        assertEquals(0.126, dailyData.getParamDoubleValueForDate(cal.getTime(), DataMatrix.ACCUMULATED_ASCOSPORES), 0.001);
+        //System.out.println(dailyData.toCSV());
     }
     
 }
