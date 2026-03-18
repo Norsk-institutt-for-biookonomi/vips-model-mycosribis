@@ -27,6 +27,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import no.nibio.vips.entity.ModelConfiguration;
 import no.nibio.vips.entity.Result;
 import no.nibio.vips.entity.ResultImpl;
@@ -49,6 +52,8 @@ import no.nibio.vips.util.WeatherUtil;
  */
 public class MycosphaerellaRibisModel extends I18nImpl implements Model {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MycosphaerellaRibisModel.class);
+
     public final static ModelId MODEL_ID = new ModelId("MYCOSRIBIS");
     private ModelUtil modelUtil;
     private WeatherUtil weatherUtil;
@@ -61,6 +66,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
     // Thresholds for warning status
     public final static Double RISK_THRESHOLD_RED_WARNING = 100d;
     public final static Double RISK_THRESHOLD_YELLOW_WARNING = 90d;
+    public final static Double RISK_THRESHOLD_AVAILABLE_ASCOSPORES = 0.03;
+    public final static Integer RISK_THRESHOLD_DURATION = 6;
 
     // Threshold for when warning status turns grey (warning ended)
     public final static Double ASCOSPORE_MATURATION_THRESHOLD = 0.99;
@@ -85,11 +92,18 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
             // Calculate model background data
             this.modelCalculations.calculateSporeMaturation(this.dailyDataMatrix, this.timeZone, this.startDateSporeMaturation);
             this.hourlyDataMatrix = this.modelCalculations.accumulateMills(hourlyDataMatrix, dailyDataMatrix, startDateSporeMaturation, timeZone);
+            this.modelCalculations.calculateSporeCastingEvents(hourlyDataMatrix, timeZone, startDateSporeMaturation);
+            this.modelCalculations.calculateAccumulatedSpores(hourlyDataMatrix, dailyDataMatrix, timeZone, startDateSporeMaturation);
+
+            LOGGER.debug(hourlyDataMatrix.toCSV());
+            LOGGER.debug(dailyDataMatrix.toCSV());
 
             // Create results!
             List<Result> results = new ArrayList<>();
             Double ascosporeMaturity = 0d;
+            Double accumulatedAscospores = 0d;
             Double conidiaMaturity = 0d;
+            Boolean isInMillsAccumulationPeriodWithEnoughAscospores = false;
             for(Date currentDate : this.hourlyDataMatrix.getSortedDateKeys())
             {
                 if(currentDate.before(startDateSporeMaturation))
@@ -117,6 +131,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 {
                     ascosporeMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_ASCOSPORES, ascosporeMaturity != null ? String.valueOf(ascosporeMaturity * 100) : "");
+                    accumulatedAscospores = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.ACCUMULATED_ASCOSPORES);
+                    result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_ASCOSPORES, accumulatedAscospores != null ? String.valueOf(accumulatedAscospores * 100) : "");
                     conidiaMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_CONIDIA);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity * 100) : "");
                 }
@@ -129,10 +145,20 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 if(accumulatedMills == null || ascosporeMaturity == 0d || ascosporeMaturity >= ASCOSPORE_MATURATION_THRESHOLD)
                 {
                     warningStatus = Result.WARNING_STATUS_NO_WARNING;
+                    isInMillsAccumulationPeriodWithEnoughAscospores = false;
                 }
                 else 
                 {
-                    if(accumulatedMills >= RISK_THRESHOLD_RED_WARNING)
+                    // Need to keep track of this here, because the accumulated ascospores can be reset at midnight if a spore casting event happens
+                    // - which normally coincides with an ongoing infection period
+                    isInMillsAccumulationPeriodWithEnoughAscospores = accumulatedMills > 0 && (isInMillsAccumulationPeriodWithEnoughAscospores || accumulatedAscospores >= RISK_THRESHOLD_AVAILABLE_ASCOSPORES);
+                    Integer riskDurationHours = hourlyDataMatrix.getParamIntValueForDate(currentDate, DataMatrix.RISK_PERIOD_DURATION_HOURS);
+                    if(
+                        accumulatedMills >= RISK_THRESHOLD_RED_WARNING 
+                        // When a mills accumulation period starts
+                        && isInMillsAccumulationPeriodWithEnoughAscospores
+                        && riskDurationHours != null && riskDurationHours >= RISK_THRESHOLD_DURATION
+                    )
                     {
                         warningStatus = Result.WARNING_STATUS_HIGH_RISK;
                     }
@@ -145,6 +171,7 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                         warningStatus = Result.WARNING_STATUS_NO_RISK;
                     }
                 }
+
                 result.setWarningStatus(warningStatus);
 
                 results.add(result);

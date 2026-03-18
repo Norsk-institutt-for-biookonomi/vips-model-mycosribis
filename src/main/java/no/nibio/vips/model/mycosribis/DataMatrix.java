@@ -29,5 +29,11 @@ public class DataMatrix extends DateMap {
     public final static String PROPORTION_MATURE_CONIDIA = "PROPORTION_MATURE_CONIDIA";
     public final static String DAILY_LW_HOURS = "DAILY_BT_HOURS"; // Daily leaf wetness duration in hours
     public final static String ACCUMULATED_RISK = "ACCRISK";
+    public final static String RISK_PERIOD_DURATION_HOURS = "RISK_PERIOD_DURATION_HOURS";
+    public final static String ACCUMULATED_RAIN_LAST_3_HOURS = "ACCRR";
+    public final static String RAIN_DURATION_HOURS = "RAIN_DURATION_HOURS";
+    public final static String IS_SPORE_CASTING_EVENT = "IS_SPORE_CASTING_EVENT";
+    public final static String ACCUMULATED_ASCOSPORES = "ACCUMULATED_ASCOSPORES";
+
     
 }
