@@ -179,8 +179,10 @@ public class ModelCalculations {
         Date currentDate = startDateSporeMaturation;
         Calendar cal = Calendar.getInstance(timeZone);
         cal.setTime(currentDate);
-        Double accumulatedSporesFraction = 0d;
-        Double previousSporeMaturationFraction = 0d;
+        Double accumulatedAscoSporesFraction = 0d;
+        Double accumulatedConidiaFraction = 0d;
+        Double previousAscoSporeMaturationFraction = 0d;
+        Double previousConidiaMaturationFraction = 0d;
         Boolean isSporeCastingEvent = false;
         while(currentDate.compareTo(endDate) <= 0)
         {
@@ -193,17 +195,28 @@ public class ModelCalculations {
             // the accumulated available spores are used up
             if(isSporeCastingEvent) 
             {
-                accumulatedSporesFraction = 0d;
+                accumulatedAscoSporesFraction = 0d;
+                accumulatedConidiaFraction = 0d;
             }
             // Updating the daily data (available ascospores)
-            Double currentSporeMaturationFraction = dailyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
-            if(currentSporeMaturationFraction != null)
+            Double currentAscoSporeMaturationFraction = dailyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_ASCOSPORES);
+            if(currentAscoSporeMaturationFraction != null)
             {
-                accumulatedSporesFraction += currentSporeMaturationFraction - previousSporeMaturationFraction;
-                dailyDataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_ASCOSPORES, accumulatedSporesFraction);
+                accumulatedAscoSporesFraction += currentAscoSporeMaturationFraction - previousAscoSporeMaturationFraction;
+                dailyDataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_ASCOSPORES, accumulatedAscoSporesFraction);
                 // Reset the value for the new day
                 isSporeCastingEvent = false;
-                previousSporeMaturationFraction = currentSporeMaturationFraction;
+                previousAscoSporeMaturationFraction = currentAscoSporeMaturationFraction;
+            } 
+
+            Double currentConidiaMaturationFraction = dailyDataMatrix.getParamDoubleValueForDate(currentDate, DataMatrix.PROPORTION_MATURE_CONIDIA);
+            if(currentConidiaMaturationFraction != null)
+            {
+                accumulatedConidiaFraction += currentConidiaMaturationFraction - previousConidiaMaturationFraction;
+                dailyDataMatrix.setParamDoubleValueForDate(currentDate, DataMatrix.ACCUMULATED_CONIDIA, accumulatedConidiaFraction);
+                // Reset the value for the new day
+                isSporeCastingEvent = false;
+                previousConidiaMaturationFraction = currentConidiaMaturationFraction;
             } 
             
             cal.add(Calendar.HOUR, 1);

@@ -66,7 +66,7 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
     // Thresholds for warning status
     public final static Double RISK_THRESHOLD_RED_WARNING = 100d;
     public final static Double RISK_THRESHOLD_YELLOW_WARNING = 90d;
-    public final static Double RISK_THRESHOLD_AVAILABLE_ASCOSPORES = 0.03;
+    public final static Double RISK_THRESHOLD_AVAILABLE_ASCOSPORES_AND_CONIDIA = 0.03;
     public final static Integer RISK_THRESHOLD_DURATION = 6;
 
     // Threshold for when warning status turns grey (warning ended)
@@ -102,8 +102,9 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
             List<Result> results = new ArrayList<>();
             Double ascosporeMaturity = 0d;
             Double accumulatedAscospores = 0d;
+            Double accumulatedConidia = 0d;
             Double conidiaMaturity = 0d;
-            Boolean isInMillsAccumulationPeriodWithEnoughAscospores = false;
+            Boolean isInMillsAccumulationPeriodWithEnoughSpores = false;
             for(Date currentDate : this.hourlyDataMatrix.getSortedDateKeys())
             {
                 if(currentDate.before(startDateSporeMaturation))
@@ -135,6 +136,8 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                     result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_ASCOSPORES, accumulatedAscospores != null ? String.valueOf(accumulatedAscospores * 100) : "");
                     conidiaMaturity = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.PROPORTION_MATURE_CONIDIA);
                     result.setValue(this.getModelId().toString(), DataMatrix.PROPORTION_MATURE_CONIDIA, conidiaMaturity != null ? String.valueOf(conidiaMaturity * 100) : "");
+                    accumulatedConidia = this.dailyDataMatrix.getParamDoubleValueForDate(midnight, DataMatrix.ACCUMULATED_CONIDIA);
+                    result.setValue(this.getModelId().toString(), DataMatrix.ACCUMULATED_CONIDIA, accumulatedConidia != null ? String.valueOf(accumulatedConidia * 100) : "");
                 }
                 
                 
@@ -145,18 +148,18 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
                 if(accumulatedMills == null || ascosporeMaturity == 0d || ascosporeMaturity >= ASCOSPORE_MATURATION_THRESHOLD)
                 {
                     warningStatus = Result.WARNING_STATUS_NO_WARNING;
-                    isInMillsAccumulationPeriodWithEnoughAscospores = false;
+                    isInMillsAccumulationPeriodWithEnoughSpores = false;
                 }
                 else 
                 {
-                    // Need to keep track of this here, because the accumulated ascospores can be reset at midnight if a spore casting event happens
+                    // Need to keep track of this here, because the accumulated ascospores and conidia can be reset at midnight if a spore casting event happens
                     // - which normally coincides with an ongoing infection period
-                    isInMillsAccumulationPeriodWithEnoughAscospores = accumulatedMills > 0 && (isInMillsAccumulationPeriodWithEnoughAscospores || accumulatedAscospores >= RISK_THRESHOLD_AVAILABLE_ASCOSPORES);
+                    isInMillsAccumulationPeriodWithEnoughSpores = accumulatedMills > 0 && (isInMillsAccumulationPeriodWithEnoughSpores || (accumulatedAscospores + accumulatedConidia) >= RISK_THRESHOLD_AVAILABLE_ASCOSPORES_AND_CONIDIA);
                     Integer riskDurationHours = hourlyDataMatrix.getParamIntValueForDate(currentDate, DataMatrix.RISK_PERIOD_DURATION_HOURS);
                     if(
                         accumulatedMills >= RISK_THRESHOLD_RED_WARNING 
                         // When a mills accumulation period starts
-                        && isInMillsAccumulationPeriodWithEnoughAscospores
+                        && isInMillsAccumulationPeriodWithEnoughSpores
                         && riskDurationHours != null && riskDurationHours >= RISK_THRESHOLD_DURATION
                     )
                     {
