@@ -34,6 +34,7 @@ public class DataMatrix extends DateMap {
     public final static String RAIN_DURATION_HOURS = "RAIN_DURATION_HOURS";
     public final static String IS_SPORE_CASTING_EVENT = "IS_SPORE_CASTING_EVENT";
     public final static String ACCUMULATED_ASCOSPORES = "ACCUMULATED_ASCOSPORES";
+    public final static String ACCUMULATED_CONIDIA = "ACCUMULATED_CONIDIA";
 
     
 }
