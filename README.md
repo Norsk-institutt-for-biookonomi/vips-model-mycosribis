@@ -24,6 +24,8 @@ started during night and continued the following day, very few spores were relea
 The present investigation provides new information that may be used when planning sanitary 
 measures to reduce primary inoculum and predict spore release patterns for Mycosphaerella leaf spot.
 
+<img src="src/main/resources/images/description_figure_2_en.png"/>
+
 ## Development
 
 Clone Gitlab repository
