@@ -19,6 +19,7 @@
 
 package no.nibio.vips.model.mycosribis;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -254,7 +255,15 @@ public class MycosphaerellaRibisModel extends I18nImpl implements Model {
 
     @Override
     public String getModelDescription(String language) {
-        return this.getText("description", language);
+        try
+        {
+            return this.modelUtil.getTextWithBase64EncodedImages(this.getText("description", language), this.getClass());
+        }
+        catch(IOException ex)
+        {
+            ex.printStackTrace();
+            return this.getText("description", language);
+        }
     }
 
     @Override
