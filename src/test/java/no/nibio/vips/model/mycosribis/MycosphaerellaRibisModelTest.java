@@ -185,7 +185,7 @@ public class MycosphaerellaRibisModelTest {
     public void testGetModelName_0args() {
         System.out.println("getModelName");
         MycosphaerellaRibisModel instance = new MycosphaerellaRibisModel();
-        String expResult = "Mycosphaerella ribis model";
+        String expResult = "Model for Leaf Spot in Blackcurrant";
         String result = instance.getModelName();
         assertEquals(expResult, result);
     }
